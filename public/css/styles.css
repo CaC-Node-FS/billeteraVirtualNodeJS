@@ -1,0 +1,229 @@
+*{
+    margin: 0;  
+    box-sizing: border-box;
+}
+/*//////////////////////////////////////////////////////////////*/
+/* Login */
+
+#login-body {
+    background-color: white;
+}
+
+#login-header {
+    height: 70px;
+    background: linear-gradient(to top, white 0%,white 19%,#d97c2b 20%,#d97c2b 32%,white 33%,white 100%);
+    margin-left: 3em; 
+    padding-left: 1em;
+    width: 120px;
+}
+
+#login-home-icon {
+    position: relative; 
+    display: inline-block;
+    cursor: pointer;
+    animation: login-home-icon-animation 1s ease-out forwards;
+}
+
+#login-home-link {
+    font-size: 0.7em;
+    visibility: hidden;
+    width: 80px;
+    color: #f23005;
+    text-align: start;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    position: absolute;
+    z-index: 1;
+}
+  
+#login-home-icon:hover #login-home-link {
+    visibility: visible;
+    filter: brightness(100%);
+}
+
+#login-home-icon:hover {    
+    filter: brightness(230%);
+}
+
+#login-home-icon:active {
+    transform: scale(1.3);
+    filter: brightness(100%);
+}
+
+#login-home-icon:active #login-home-link {
+    visibility: hidden;
+    filter: brightness(100%);
+}
+
+@keyframes login-home-icon-animation {
+    0%{
+        opacity: 0;
+        padding-bottom: 100%;
+    }
+    100% {
+        opacity: 1;
+        padding-bottom: 0;
+    }
+}
+
+#login-register-link {
+    color: #d97c2b;
+}
+
+#login-register-link:hover {
+    color: #f23005;
+}
+
+#login-register-link:active {
+    text-shadow: 2px 2px 8px black;
+}
+
+#login-register-label {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+    margin: 5%;
+}
+
+#login-logo {    
+    width: 40% ;
+    animation: login-logo-animation 2s ease-out forwards;
+}
+
+@keyframes login-logo-animation {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#login-title {
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    padding-left: 8%;
+    text-align: start;
+    animation: login-title-animation 1.5s ease-out forwards;
+}
+
+@keyframes login-title-animation {
+    0% {
+        width: 0;
+        padding-bottom: 100%;
+    }
+    100% {
+        width: 100%;
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    #login-logo {
+        width: 60%;
+        float: right;
+    }
+    #login-title {
+        text-align: left;
+    }
+}
+
+.login-cell {
+    margin: 30px;
+    background-color: none;
+}
+
+.login-form-validation {
+    text-align: start;
+    font-size: 0.8em;
+}
+
+#login-message-error-user {
+    visibility: hidden;
+}
+
+#login-message-error-password {
+    display: block !important;
+    visibility: hidden;
+}
+
+#login-message-error-access {
+    text-align: center;
+    visibility: hidden;
+    margin-top: 30px !important;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 105% !important;
+    align-items: center;
+}
+
+.input-group-text {
+    padding: 0;
+    text-align: start;
+    background-color: none;
+    border: 1px solid;
+}
+
+.form-floating>.form-control {
+    padding-right: 0 !important;
+}
+
+#login-footer {
+    height: 50px;
+    color: white;
+    background-color: #f23005;
+}
+
+#login-eye-icon {
+    background-color: none;
+    border-radius: 0;
+    border: none;
+}
+
+.btn {
+    border:none;
+    background-color: #d97c2b;
+    color: white;
+}
+
+.btn:hover {
+    border:none;
+    background-color:#f23005;
+    color: white;
+}
+
+.btn:active {
+    border:none;
+    background-color:#f23005 !important;
+    color: white !important;
+    transform: scale(1.2);
+}
+
+form .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #d97c2b;
+}
+
+form .form-control:focus{
+    box-shadow: none;
+    border: none;
+    animation: border-bottom-progress 1s ease-out forwards;
+}
+      
+@keyframes border-bottom-progress {
+    0%{
+        width: 0%;
+        border-bottom: 2px solid #f23005;
+    }
+    100% {
+        width: 100%;
+        border-bottom: 2px solid #f23005;
+    }
+}
+/*//////////////////////////////////////////////////////////////*/

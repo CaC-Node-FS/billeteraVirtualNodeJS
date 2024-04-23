@@ -1,0 +1,36 @@
+*{
+    margin: 0;  
+    box-sizing: border-box;
+}
+
+body{
+    min-width: 360px;
+}
+
+/* header nav{
+    background-color: #d97c2b;
+} */
+
+a {
+    color:white !important;
+}
+
+ul li a:hover{
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+
+#img-header{
+    width:3rem;
+
+}
+
+#img-perfil{
+    width:6rem;
+    filter: grayscale(100%);
+}
+
+article p{
+    border:1px salmon dashed;
+    background-color: aliceblue;
+}

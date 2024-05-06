@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Home Banking</title>
+    <link rel="icon" href="../../public/media/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../public/css/registro.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <video src="../../public/media/logo.webm" autoplay loop muted id="logo"></video>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio">Inicio</a></li>
+                <li><a href="servicios">Servicios</a></li>
+                <li><a href="contacto.html" target="_blank">Contacto</a></li>
+            </ul>  
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../../public/media/registro.png" class="img-fluid" alt="Persona registrandose">
+            </div>
+            <div class="col-md-6">
+                <form id="registrationForm" class="form-container">
+                    <h2 class="mb-4">Registro - Home Banking</h2>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre completo"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmar_contrasena">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="confirmar_contrasena"
+                            placeholder="Confirme su contraseña" required>
+                        <div id="contrasenaError" class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Cac 24124 Todos los derechos reservados © 2024 - Banco Cac</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

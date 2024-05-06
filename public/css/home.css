@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*//////////////////////////////////////////////////////////////*/
+
+.img-header{
+    width: 4rem;
+}
+
+.navbar-brand {
+    font-size: 1em !important;
+}
+
+ul li a:hover{
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+ 
+html {
+    height: 100vh;
+}
+
+#home-body {
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+#text-bienvenida {
+    margin-top: 15px;
+    grid-area: bienvenida;
+    width: 100%;
+    text-align: start;
+}
+
+#home-main {
+    display: grid;
+    height: calc(100% - 120px);
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows:  5% 65% 30%;
+    grid-template-areas: ". bienvenida ."
+                         ". info ."                         
+                         ". botones .";
+}
+
+#home-eye-icon {
+    width: 50px;
+}
+ 
+#saldo {
+    /* -webkit-text-security: disc; */
+    visibility: hidden;
+    
+}
+
+#botones {
+    grid-area: botones;
+    display: grid;
+    width: 70%;
+    max-width: 500px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2%;
+    justify-items: center;
+    align-items: end;
+}
+
+.boton {
+    width: 70px;
+    height: 80px;
+    border-radius: 10px;
+    text-align:center;
+    color: white;
+    background-color: #BF2604;
+    opacity: 0.6;
+}
+
+.boton:hover {
+    cursor: pointer;    
+    scale: 1.2;
+}
+
+.boton:active {
+    transform: scale(1.2);
+}
+
+.boton figcaption {
+    padding: 2px;
+    font-size: 65%;
+}
+ 
+#info {
+    grid-area: info;
+    height: 100%;
+}
+
+.boton-item {
+    width: 75%;
+    height: 75%;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+#home-footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
+}
+
+#info h5 {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+#info span {
+    font-weight: bolder;
+}
+
+/*cuenta css*/
+#cuenta_header {
+    word-spacing: 170px;
+}
+
+#movimientos_header {
+    grid-area: movimientos_header;
+    text-align: end;
+}
+
+#cuenta_datos {
+    grid-area: cuenta_datos;
+    border-radius: 10px;
+    background-color:  rgb(229, 215, 190);
+    padding: 10px;
+    padding-bottom: 0;
+    font-size: 0.9em;
+    max-width: 250px;
+    max-height: 120px;
+}
+
+#cuenta_movimientos {
+    grid-area: cuenta_movimientos;
+}
+
+#cuenta_movimientos table {
+    height: 160px;
+}
+
+
+#cuenta_movimientos table .fecha, #cuenta_movimientos table .tipo {
+    width: 10%;
+}
+#cuenta_movimientos table .concepto {
+    width: 50%;
+}
+#cuenta_movimientos table .importe{
+    width: 30%;
+} 
+
+#cuenta_movimientos table {
+    font-size: 0.7em;
+    display: flex;
+    flex-flow: column;
+    min-width: 300px;
+    max-width: 650px;
+    max-height: 160px;
+    border-collapse: separate;
+    border-spacing: 0 0.2em;
+}
+
+#cuenta_movimientos table thead {
+    background-color:  rgb(229, 215, 190);
+}  
+
+#cuenta_movimientos table tr:nth-child(even) {
+    background-color: #bd7a6b;
+}    
+  
+#cuenta_movimientos table thead {
+    text-align: end;
+}
+  
+#cuenta_movimientos table tbody {
+    display: block;
+    overflow-y: auto;
+    text-align: end;
+}
+  
+#cuenta_movimientos table tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+#cuenta_movimientos table tr td.importe {
+    padding-right: 10px;
+}
+
+#cuenta_movimientos table tr th.importe {
+    padding-right: 25px;
+}
+
+#cuenta_movimientos table tr th.concepto {
+    padding-right: 15px;
+}
+
+#info_cuenta {
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 35% 5% 60%;
+    grid-template-areas:"cuenta_header . movimientos_header"
+                        "cuenta_datos . cuenta_movimientos";
+}
+
+#info_cuenta  h6 {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    
+}
+
+@media screen and (max-width: 768px ) {
+    #home-main {
+        height: calc(100% - 150px);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 2px;
+        margin-right: 2px;
+        display: grid;
+        justify-content: center;
+        align-items: end;
+        grid-template-columns: 100%;
+        grid-template-rows: 5% 65% 30%;
+        grid-template-areas: "bienvenida"
+                             "info"
+                             "botones";
+    }    
+    #info_cuenta {
+        margin-top: 20px;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-gap: 10px;
+        grid-template-columns: 100%;
+        grid-template-areas: "cuenta_header"
+                             "cuenta_datos"
+                             "movimientos_header"
+                             "cuenta_movimientos";
+    }
+    #cuenta_header, #movimientos_header {
+        width: 100%;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+        background-color: #bd7a6b;
+    }
+    #cuenta_movimientos table {
+        font-size: 0.6em;
+    }
+    #cuenta_movimientos table {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .boton {
+        width: 50px;
+        height: 57px;
+    }
+    .boton figcaption {
+        padding: 1px;
+        font-size: 45%;
+    }
+
+}
+
+@media screen and (max-height: 650px) {
+    #home-main {
+        height: 500px;
+        
+    }
+    #home-body {
+        height: 650px;
+        overflow-y: scroll;
+    }
+}  
+
+/*///////////*/
+
+/*////////////////////////////////////////////////////////////*

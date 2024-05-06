@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Home Banking</title>
+    <link rel="icon" href="../../public/media/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../public/css/contacto.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <video src="../../public/media/logo.webm" autoplay loop muted id="logo"></video>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="servicio">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../../public/media/call center.png" class="img-fluid" alt="Imagen de contacto">
+            </div>
+            <div class="col-md-6">
+                <h2>Contacto</h2>
+                <p>¡Estamos aquí para ayudarte! Si tienes alguna pregunta o inquietud, no dudes en comunicarte con nosotros al <b>0800-333-BANCO</b>.
+                    Nuestro horario de atención es de lunes a viernes, de 8:00 a 20:00 horas. También puedes utilizar el formulario de contacto a continuación o visitarnos en nuestra sucursal más cercana.
+                </p>
+                <form id="contactForm" class="form-container" action="procesar_formulario.php" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="Ingrese su nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="Ingrese su correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escriba aquí su mensaje"
+                            rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Enviar mensaje</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Cac 24124 Todos los derechos reservados © 2024 - Banco Cac</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 10px;
+}
+
+.col-md-6 h2 {
+    padding: 0px, 20px, 2px, 20px;
+    text-align: center;
+}
+
+.col-md-6 p {
+    padding: 15px;
+    line-height: 25px;
+    font-size: larger;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background-color: #F25C05;
+    padding: 30px;
+    display: flex;
+    padding-top: 50px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+header ul {
+    list-style: none;
+    padding: 20;
+    margin: 10;
+    display: flex;
+}
+
+header ul li {
+    display: inline-flex;
+    margin-right: 30px;
+    padding: 15px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: right;
+    font-size: larger;
+}
+
+header a:hover {
+    color: #BF2604;
+
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+/* Estilos del formulario */
+.form-container {
+    background-color: #ffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+
+}
+
+.mb-4 {
+    text-align: center;
+    color: #A66C26;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #A66C26;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #734F22;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #F25C05;
+    border: 1px solid #BF2604;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: calc(100% - 20px);
+    margin-top: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary:hover {
+    background-color: #BF2604;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+}
+
+footer {
+    background-color: #F25C05;
+    padding: 50px;
+    text-align: center;
+    color: #ffff
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    header {
+        padding: 15px;
+        
+    }
+
+    #logo {
+        width: 60px;
+       
+    }
+
+    header ul li {
+        margin-left: 15px;
+       
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    header {
+        padding: 10px;
+       
+    }
+
+    #logo {
+        width: 40px;
+        
+    }
+
+    header ul li {
+        margin-left: 10px;
+       
+    }
+}

@@ -26,6 +26,17 @@ ul li a:hover{
 
 }
 
+#seccion-carrusel div{
+    height:30rem;
+}
+
+.carousel-caption{
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
 #index-footer {
     width: 100%;
     bottom: 0;

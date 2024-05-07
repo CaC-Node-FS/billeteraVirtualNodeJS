@@ -12,7 +12,7 @@ let infoPerfil = "perfil"
 
 //La idea es que los "info" de cada función esten guardados del lado del servidor y se reemplacen dinámicamente según el botón que presiona el usuario (no sé si esto se resuelve de esta manera).
 //Como ejemplo de como funcionaría, copié en string el main de cuenta.html.
-let mainCuenta = '<div id="info"><article id="info_cuenta"><h6 id="cuenta_header">Cuenta <span><i id="home-eye-icon" class="bi-eye bi-eye-slash" onclick="verSaldo()"></i></span></h6><section id="cuenta_datos"><p>CA $ 111 111111/1 </p><p>$<span id="saldo">1.111.111,11</span></p><p>CBU: 1111111111111111111111</p></section><h6 id="movimientos_header">Movimientos</h6><section id="cuenta_movimientos"><table><thead><tr><th class="fecha">Fecha</th><th class="tipo">Tipo</th><th class="concepto">Concepto</th><th class="importe">Importe</th></tr></thead><tbody><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit, amet consectetur adipisicing</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr></tbody></table></section></article></div>'
+let mainCuenta = '<h6 id="cuenta_header">Cuenta <span><i id="home-eye-icon" class="bi-eye bi-eye-slash"  onclick="verSaldo()"></i></span></h6><section id="cuenta_datos"><p>CA $ 111 111111/1 </p><p>$<span id="saldo">1.111.111,11</span></p><p>CBU: 1111111111111111111111</p></section><h6 id="movimientos_header">Movimientos</h6><section id="cuenta_movimientos"><table><thead><tr><th class="fecha">Fecha</th><th class="tipo">Tipo</th><th class="concepto">Concepto</th><th class="importe" >Importe</th></tr></thead><tbody><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><d class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">-$1.111,11</td></tr><tr><td class="fecha">15/04</td><td class="tipo">Crédito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe">&nbsp$1.111,11</td></tr><tr><td class="fecha">16/04</td><td class="tipo">Débito</td><td class="concepto">Lorem ipsum dolor sit amet</td><td class="importe"-$1.111,11</td></tr></tbody></table></section>'
 
 let info = document.getElementById("info")
 
@@ -46,28 +46,32 @@ botons.forEach((x) =>{x.addEventListener("click", function() {
     botons.forEach((y) => {
         if (y != x) {
             y.style.opacity = 0.6
-        } else {
-            console.log(y.id)
         }
     })
 
-    //reemplazo dinámico de <div id="info"> según botón activo
+    let nuevoMain
+
+    //reemplazo dinámico de <article id="info"> según botón activo
     switch(x.id) {
         case infoCuenta:
-            info.replaceChild(parser.parseFromString(mainCuenta, 'text/html').body.firstChild,info.children[0])
-            document.getElementById("saldo").style.visibility = 'hidden'
+            nuevoMain = parser.parseFromString(mainCuenta, 'text/html').body
+            info.innerHTML = nuevoMain.innerHTML
             break
         case infoTransferencias:
-            info.replaceChild(parser.parseFromString(`<h1>Transferencias</h1>`, 'text/html').body.firstChild,info.children[0])
+            nuevoMain = parser.parseFromString('<h1>Transferencias</h1>', 'text/html').body
+            info.innerHTML = nuevoMain.innerHTML
             break
         case infoInversiones:
-            info.replaceChild(parser.parseFromString(`<h1>Inversiones</h1>`, 'text/html').body.firstChild,info.children[0])
+            nuevoMain = parser.parseFromString('<h1>Inversiones</h1>', 'text/html').body
+            info.innerHTML = nuevoMain.innerHTML
             break
         case infoPagos:
-            info.replaceChild(parser.parseFromString(`<h1>Pagos</h1>`, 'text/html').body.firstChild,info.children[0])
+            nuevoMain = parser.parseFromString('<h1>Pagos</h1>', 'text/html').body
+            info.innerHTML = nuevoMain.innerHTML
             break
         case infoPerfil:
-            info.replaceChild(parser.parseFromString(`<h1>Perfil</h1>`, 'text/html').body.firstChild,info.children[0])
+            nuevoMain = parser.parseFromString('<h1>Perfil</h1>', 'text/html').body
+            info.innerHTML = nuevoMain.innerHTML
             break
     }
 })

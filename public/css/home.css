@@ -35,9 +35,10 @@ html {
     text-align: start;
 }
 
-#home-main {
+main {
     display: grid;
-    width: 100%;    
+    width: 100%;
+    justify-items: auto;
     height: calc(100% - 150px);
     grid-template-columns: 100%;
     grid-template-rows:  10% 65% 25%;
@@ -209,7 +210,7 @@ html {
     padding-right: 15px;
 }
 
-#info_cuenta {
+#info {
     display: grid;
     justify-items: center;
     align-items: center;
@@ -222,7 +223,7 @@ html {
                          "cuenta_movimientos";
 }
 
-#info_cuenta  h6 {
+#info h6 {
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
     

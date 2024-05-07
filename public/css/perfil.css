@@ -5,6 +5,7 @@
 
 body{
     min-width: 360px;
+    min-height:100vh;
 }
 
 /* header nav{
@@ -33,4 +34,13 @@ ul li a:hover{
 article p{
     border:1px salmon dashed;
     background-color: aliceblue;
+}
+
+#perfil-footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
 }

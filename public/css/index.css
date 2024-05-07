@@ -1,0 +1,36 @@
+*{
+    margin: 0;  
+    box-sizing: border-box;
+}
+
+body{
+    min-width: 360px;
+    min-height:100vh;
+}
+
+/* header nav{
+    background-color: #d97c2b;
+} */
+
+a {
+    color:white !important;
+}
+
+ul li a:hover{
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+
+.img-header{
+    width:3rem;
+
+}
+
+#index-footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
+}

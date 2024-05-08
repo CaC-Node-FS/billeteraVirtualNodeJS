@@ -44,3 +44,12 @@ article p{
     color: white;
     background-color:#0D0D0D;
 }
+
+#perfil-footer p{
+    font-size:.7rem;
+    padding-top:.5rem;
+}
+
+.naranja{
+    color: #d97c2b;
+}

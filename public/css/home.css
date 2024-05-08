@@ -5,6 +5,16 @@
 }
 /*//////////////////////////////////////////////////////////////*/
 
+#body {
+    background-image: url("../media/background_cuenta.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
 .img-header{
     width: 4rem;
 }
@@ -22,7 +32,7 @@ html {
     height: 100vh;
 }
 
-#home-body {
+#body {
     height: 100vh;
 }
 
@@ -33,6 +43,7 @@ html {
     margin-top: 10px;
     padding-left: 10px;
     text-align: start;
+    color: white;
 }
 
 main {
@@ -248,7 +259,7 @@ main {
 }
 
 @media screen and (max-height: 650px) {
-    #home-body {
+    #body {
         height: 650px;
         overflow-y: scroll;
     }

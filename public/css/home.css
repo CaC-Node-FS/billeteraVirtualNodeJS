@@ -7,12 +7,11 @@
 
 #body {
     background-image: url("../media/background_cuenta.jpg");
+    background-size: 100% 100%;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    
 }
 
 .img-header{
@@ -43,8 +42,15 @@ html {
     margin-top: 10px;
     padding-left: 10px;
     text-align: start;
-    color: white;
+    color: #0D0D0D;
+    font-family: "Poetsen One";
+   
+    font-style: normal;
 }
+/* 
+#text-bienvenida span {
+    font-weight: 600;
+} */
 
 main {
     display: grid;
@@ -59,8 +65,36 @@ main {
 }
 
 #home-eye-icon {
-    width: 50px;
+    display: inline-block;
+    font-size: 1em;
+    padding-left: 5px;
     cursor: pointer;
+}
+#CBU {    
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+#home-copy-CBU {
+    display: inline-block;
+    cursor: pointer;
+    width: 1em;
+    margin-left: 5px;
+}
+
+#home-copy-CBU:active {
+    width: 1.2em;
+}
+
+#CBU-copiado {
+    position: relative;
+    background-clip: content-box;
+    left: 80%;
+    border-radius: 5px;
+    background-color: #d97c2b;
+    text-align: center;
+    font-size: 0.7em;
+    visibility: hidden;
 }
  
 #saldo {
@@ -92,6 +126,7 @@ main {
 }
 
 .boton:hover {
+    /* transform: scale(1.2); */
     scale: 1.2;
 }
 
@@ -118,7 +153,16 @@ main {
     padding: 3%;
 }
 
-#home-footer {
+/* #home-footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
+} */
+
+#footer {
     width: 100%;
     bottom: 0;
     position: fixed;
@@ -127,11 +171,19 @@ main {
     background-color:#0D0D0D;
 }
 
+#footer p{
+    font-size:.7rem;
+    padding-top:.5rem;
+}
+
+.naranja{
+    color: #d97c2b;
+}
+
 #info span {
     font-weight: bolder;
 }
 
-/*cuenta css*/
 #cuenta_header, #movimientos_header {
     width: 100%;
     margin: 0;
@@ -145,23 +197,66 @@ main {
     grid-area: movimientos_header;
 }  
 
-#cuenta_datos {
-    grid-area: cuenta_datos;
+#cuenta_datos, #cuenta_tarjeta {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    width: 250px;
+    height: 150px;
     border-radius: 10px;
-    background-color:  rgb(229, 215, 190);
-    padding: 10px;
-    padding-bottom: 0;
     font-size: 0.9em;
-    max-width: 250px;
-    max-height: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cuenta_datos {    
+    grid-area: cuenta_datos;
+    padding-top: 10px;
+    background-color:  rgba(255,255,255,0.8);
+}
+
+#cuenta_tarjeta {    
+    grid-area: cuenta_tarjeta;    
+    background-color: rgba(191, 38, 4, 0.8);
+}
+
+#logo_tarjeta {
+    width: 15%;
+}
+
+#cuenta_tarjeta figure p {
+    margin: 0;
+}
+
+#cuenta_tarjeta p {
+    margin-bottom: 2px;
+}
+
+#cuenta_tarjeta figcaption {
+    font-size: smaller;
+}
+
+#numero_tarjeta {
+    word-spacing: 20px;
+    -webkit-text-security: disc;
 }
 
 #cuenta_movimientos {
+    width: 430px;
     grid-area: cuenta_movimientos;
 }
 
 #cuenta_movimientos table {
-    height: 140px;
+    font-size: 0.7em;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-height: 160px;
+    border-collapse: separate;
+    border-spacing: 0 3px;
+}
+#cuenta_movimientos table td {
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 #cuenta_movimientos table .fecha, #cuenta_movimientos table .tipo {
@@ -172,34 +267,29 @@ main {
 }
 #cuenta_movimientos table .importe{
     width: 30%;
-} 
-
-#cuenta_movimientos table {
-    font-size: 0.7em;
-    display: flex;
-    flex-flow: column;
-    min-width: 300px;
-    max-width: 650px;
-    max-height: 160px;
-    border-collapse: separate;
-    border-spacing: 0 0.2em;
 }
 
-#cuenta_movimientos table thead {
-    background-color:  rgb(229, 215, 190);
-}  
-
 #cuenta_movimientos table tr:nth-child(even) {
-    background-color: #bd7a6b;
-}    
+    background-color:  rgba(191, 38, 4, 0.8);
+}
+
+#cuenta_movimientos table tr:nth-child(odd) {
+    background-color: rgba(255,255,255,0.8);
+}
+
+#cuenta_movimientos table thead tr {
+    background-color:  rgba(13,13,13,0.5) !important;
+    color: white
+}
   
 #cuenta_movimientos table thead {
-    text-align: end;
+    text-align: end;   
 }
   
 #cuenta_movimientos table tbody {
     display: block;
     overflow-y: auto;
+    overflow-x: auto;
     text-align: end;
 }
   
@@ -221,32 +311,93 @@ main {
     padding-right: 15px;
 }
 
-#info {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-gap: 2px;
-    grid-template-columns: 100%;
-    grid-template-rows: 5% 40% 5% 50%;
-    grid-template-areas: "cuenta_header"
-                         "cuenta_datos"
-                         "movimientos_header"
-                         "cuenta_movimientos";
-}
-
-#info h6 {
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+#cuenta_movimientos .accordion-button {
+    background-color: white;
     
 }
 
+#cuenta_movimientos .accordion-button:focus {
+    --bs-accordion-btn-focus-box-shadow:none;
+    background-color: #d97c2b;
+}
+
+#info {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    grid-template-columns: 15% 25% 5% 40% 15%;
+    grid-template-rows: 50% 50%;
+    grid-gap: 5px;
+    grid-template-areas: ". cuenta_datos . cuenta_movimientos ."
+                         ". cuenta_tarjeta .  . .";
+}
+
+@media screen and (max-width: 996px) {
+    #info {
+        display: grid;
+        justify-items: center;
+        align-content: start;
+        grid-template-columns: 5% 35% 5% 50% 5%;
+        grid-template-rows: 50% 50%;
+        grid-gap: 5px;
+        grid-template-areas: ". cuenta_datos . cuenta_movimientos ."
+                             ". cuenta_tarjeta .  . .";
+    }
+}
+
 @media screen and (max-width: 768px ) {
+    #cuenta_movimientos {
+        width: 90%;
+    }
+
     #cuenta_movimientos table {
         font-size: 0.6em;
+    }
+    main {
+        display: grid;
+        width: 100%;
+        justify-items: auto;
+        height: calc(100% - 110px);
+        grid-template-columns: 20% 80%;
+        grid-template-rows:  10% 90%;
+        grid-template-areas: "bienvenida bienvenida"
+                             "botones info";
+                             
+    }
+    #info {
+        margin: 20px;
+        display: grid;
+        justify-items: start;
+        align-content: start;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 70%;
+        grid-gap: 5px;
+        grid-template-areas: "cuenta_datos cuenta_tarjeta"
+                             "cuenta_movimientos cuenta_movimientos";
+    }
+    #botones {
+        margin: auto;
+        grid-area: botones;
+        display: grid;
+        width: 70%;
+        height: 450px;
+        grid-template-columns: 1fr;
+        grid-gap: 2%;
+        justify-items: center;
+        align-self: start;
+    }
+    #cuenta_datos, #cuenta_tarjeta {
+        margin-top: 20px;
+        width: 200px;
+        height: 120px;
+        font-size: 0.65em;
     }
 }
 
 @media screen and (max-width: 576px) {
+    #botones {
+        height: 320px;
+    }
     .boton {
         width: 50px;
         height: 57px;
@@ -254,6 +405,46 @@ main {
     .boton figcaption {
         padding: 1px;
         font-size: 45%;
+    }
+    #cuenta_datos {
+        width: 200px;
+        height: 100px;
+    }
+    #cuenta_tarjeta {
+        width: 200px;
+        height: 120px;
+    }
+    #cuenta_movimientos {
+        width: 300px;
+    }
+    #cuenta_movimientos table {
+        height: 100px;
+        display: block;
+        overflow-x: scroll;        
+    }
+    main {
+        display: grid;
+        width: 100%;
+        justify-items: center;
+        align-items: start;
+        height: calc(100% - 150px);
+        grid-template-columns: 20% 80%;
+        grid-template-rows:  10% 90%;
+        grid-template-areas: "bienvenida bienvenida"
+                             "botones info";
+                             
+                             
+    }
+    #info {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 100%;
+        grid-template-rows: 30% 30% 40%;
+        grid-gap: 5px;
+        grid-template-areas: "cuenta_datos"
+                             "cuenta_tarjeta"
+                             "cuenta_movimientos";
     }
 
 }
@@ -263,7 +454,12 @@ main {
         height: 650px;
         overflow-y: scroll;
     }
-}  
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
 
 /*///////////*/
 

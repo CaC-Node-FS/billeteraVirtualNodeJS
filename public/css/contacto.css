@@ -42,7 +42,21 @@ body {
     height: auto;
 }
 
-header {
+/* Estilos del header */
+a {
+    color:white !important;
+}
+
+ul li a:hover{
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+
+.img-header{
+    width: 4rem;
+}
+
+/* header {
     background-color: #F25C05;
     padding: 30px;
     display: flex;
@@ -82,7 +96,7 @@ header a:hover {
     width: 100px;
     height: 100px;
     margin-left: 20px;
-}
+} */
 
 /* Estilos del formulario */
 .form-container {
@@ -141,12 +155,30 @@ label {
     font-size: 0.9rem;
 }
 
-footer {
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
+}
+
+#footer p{
+    font-size:.7rem;
+    padding-top:.5rem;
+}
+
+.naranja{
+    color: #d97c2b;
+}
+
+/* footer {
     background-color: #F25C05;
     padding: 50px;
     text-align: center;
     color: #ffff
-}
+} */
 
 @media (max-width: 768px) {
     .col-md-6 {

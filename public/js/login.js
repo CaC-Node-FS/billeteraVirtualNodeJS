@@ -1,14 +1,14 @@
 const form = document.getElementById("login");
     
-    form.addEventListener("submit", function(event) {
-
-      event.preventDefault();
+    form.addEventListener("submit", function(event) {      
 
       const usuario = document.getElementById("usuario")
 
       const clave = document.getElementById("clave")
 
       if(document.getElementById("usuario").value == "") {
+
+        event.preventDefault();
       
         document.getElementById("login-message-error-user").style.visibility = "visible"
       
@@ -18,6 +18,8 @@ const form = document.getElementById("login");
       }
 
       if(document.getElementById("clave").value.length < 8) {
+
+        event.preventDefault();
       
         document.getElementById("login-message-error-password").style.visibility = "visible"
       
@@ -28,7 +30,7 @@ const form = document.getElementById("login");
       
       if(document.getElementById("usuario").value !== "" && document.getElementById("clave").value.length >= 8) {
       
-        form.requestSubmit()
+        //form.requestSubmit()
 
         //form.submit()   //No funciona, no sé por qué (HTTP ERROR 405)
       

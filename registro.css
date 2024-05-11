@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 10px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos del formulario */
+.form-container {
+    background-color: #ffff;
+    height: 100%;
+    border-radius: 10px;
+    padding: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mb-4 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #a66c26;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #734f22;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #f25c05 !important;
+    border: 1px solid #bf2604 !important;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: calc(100% - 20px);
+    margin-top: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary:hover {
+    background-color: #bf2604 !important;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    padding-top: 40px;
+}
+
+#registro-footer {
+    margin-top: auto;
+    height: 2.5em;
+    color: #d97c2b;
+    background-color: #0d0d0d;
+    padding: 50px;
+    text-align: center;
+}
+
+.navbar {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.img-header {
+    width: 4rem;
+}
+
+.navbar-brand {
+    font-size: 1em !important;
+}
+
+ul li a:hover {
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 40px;
+}
+
+.password-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#registroExitoso {
+    display: none;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    padding: 20px; 
+    position: fixed;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%);
+    max-width: 250px; 
+    text-align: right; 
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    #logo {
+        width: 60px;
+    }
+
+    header ul li {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    #logo {
+        width: 40px;
+    }
+
+    header ul li {
+        margin-left: 10px;
+    }
+}

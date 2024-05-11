@@ -1,8 +1,8 @@
 * {
-    box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
+
 
 body {
     font-family: Arial, sans-serif;
@@ -42,61 +42,38 @@ body {
     height: auto;
 }
 
-/* Estilos del header */
-a {
-    color:white !important;
+#contacto-footer {
+    margin-top: auto;
+    height: 2.5em;
+    color: #d97c2b;
+    background-color: #0D0D0D;
+    padding: 50px;
+    text-align: center;
 }
 
-ul li a:hover{
-    color: #d97c2b !important;
-    font-weight: bold;
+.navbar {
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.img-header{
+.img-header {
     width: 4rem;
 }
 
-/* header {
-    background-color: #F25C05;
-    padding: 30px;
-    display: flex;
-    padding-top: 50px;
+.navbar-brand {
+    font-size: 1em !important;
 }
 
-nav {
-    margin-left: auto;
-}
-
-header ul {
-    list-style: none;
-    padding: 20;
-    margin: 10;
-    display: flex;
-}
-
-header ul li {
-    display: inline-flex;
-    margin-right: 30px;
-    padding: 15px;
-}
-
-header ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    text-align: right;
-    font-size: larger;
-}
-
-header a:hover {
-    color: #BF2604;
-
+ul li a:hover {
+    color: #d97c2b !important;
+    font-weight: bold;
 }
 
 #logo {
     width: 100px;
     height: 100px;
     margin-left: 20px;
-} */
+}
 
 /* Estilos del formulario */
 .form-container {
@@ -132,8 +109,8 @@ label {
 }
 
 .btn-primary {
-    background-color: #F25C05;
-    border: 1px solid #BF2604;
+    background-color: #F25C05 !important;
+    border: 1px solid #BF2604 !important;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -144,10 +121,12 @@ label {
     display: block;
     margin-left: auto;
     margin-right: auto;
+
 }
 
+
 .btn-primary:hover {
-    background-color: #BF2604;
+    background-color: #BF2604 !important;
 }
 
 .error-message {
@@ -155,30 +134,16 @@ label {
     font-size: 0.9rem;
 }
 
-#footer {
-    width: 100%;
-    bottom: 0;
-    position: fixed;
-    height: 30px;
-    color: white;
-    background-color:#0D0D0D;
+.mensaje-confirmacion {
+    display: none;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
-#footer p{
-    font-size:.7rem;
-    padding-top:.5rem;
-}
-
-.naranja{
-    color: #d97c2b;
-}
-
-/* footer {
-    background-color: #F25C05;
-    padding: 50px;
-    text-align: center;
-    color: #ffff
-} */
 
 @media (max-width: 768px) {
     .col-md-6 {
@@ -188,18 +153,19 @@ label {
 
     header {
         padding: 15px;
-        
+
     }
 
     #logo {
         width: 60px;
-       
+
     }
 
     header ul li {
         margin-left: 15px;
-       
+
     }
+    
 }
 
 @media (max-width: 576px) {
@@ -209,16 +175,16 @@ label {
 
     header {
         padding: 10px;
-       
+
     }
 
     #logo {
         width: 40px;
-        
+
     }
 
     header ul li {
         margin-left: 10px;
-       
+
     }
 }

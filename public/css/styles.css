@@ -7,38 +7,37 @@
     color: #b5320f;
 }
 .custom-hover-bottom:hover {
-    background-color: #b5320f; /* Cambia el fondo al hacer hover */
+    background-color: #b5320f; 
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 .custom-hover-bottom:hover svg {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(97deg) brightness(103%) contrast(103%); /* Cambia el color del SVG al hacer hover */
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(97deg) brightness(103%) contrast(103%); 
 }
 
 .custom-hover-bottom:hover h5,
 .custom-hover-bottom:hover p {
-    color: white; /* Cambia el color del texto al hacer hover */
+    color: white; 
 }
 .custom-hover-middle:hover {
-    background-color: #b5320f; /* Cambia el fondo al hacer hover */
+    background-color: #b5320f; 
 
 }
 
 .custom-hover-middle:hover svg {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(97deg) brightness(103%) contrast(103%); /* Cambia el color del SVG al hacer hover */
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(97deg) brightness(103%) contrast(103%); 
 }
 
 .custom-hover-middle:hover h5,
 .custom-hover-middle:hover p {
-    color: white; /* Cambia el color del texto al hacer hover */
+    color: white;
 }
 .avatar {
     width: 70px;
-    /*Ajustaeltamañodelavatarsegúnseanecesario*/height: 70px;
+    height: 70px;
     border-radius: 50%;
-    /*Hacequelaimagentengabordesredondos*/overflow: hidden;
-     /* Oculta cualquier parte de la imagen que sobresalga del radio */:;
+    overflow: hidden;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;

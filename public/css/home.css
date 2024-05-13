@@ -4,14 +4,8 @@
     box-sizing: border-box;
 }
 /*//////////////////////////////////////////////////////////////*/
-
-#body {
-    background-image: url("../media/background_cuenta.jpg");
-    background-size: 100% 100%;
+html, body {
     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .img-header{
@@ -26,14 +20,6 @@ ul li a:hover{
     color: #d97c2b !important;
     font-weight: bold;
 }
- 
-html {
-    height: 100vh;
-}
-
-#body {
-    height: 100vh;
-}
 
 #text-bienvenida {
     grid-area: bienvenida;
@@ -43,25 +29,21 @@ html {
     padding-left: 10px;
     text-align: start;
     color: #0D0D0D;
-    font-family: "Poetsen One";
-   
-    font-style: normal;
+    font-size: 1.5em;
+    font-family: "Neuton", serif;
+    font-weight: 400;
+    font-style: italic;
+ 
 }
-/* 
-#text-bienvenida span {
-    font-weight: 600;
-} */
 
 main {
     display: grid;
     width: 100%;
-    justify-items: auto;
-    height: calc(100% - 150px);
+    min-height: 100%;
     grid-template-columns: 100%;
-    grid-template-rows:  10% 65% 25%;
+    grid-template-rows:  8% 92%;
     grid-template-areas: "bienvenida"
-                         "info"
-                         "botones";
+                         "info";
 }
 
 #home-eye-icon {
@@ -89,78 +71,24 @@ main {
 #CBU-copiado {
     position: relative;
     background-clip: content-box;
-    left: 80%;
+    left: 75%;
     border-radius: 5px;
-    background-color: #d97c2b;
-    text-align: center;
     font-size: 0.7em;
     visibility: hidden;
 }
  
 #saldo {
-    /* -webkit-text-security: disc; */
+
     visibility: hidden;
+    
 }
 
-#botones {
-    margin: auto;
-    grid-area: botones;
-    display: grid;
-    width: 70%;
-    max-width: 500px;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 2%;
-    justify-items: center;
-    align-items: center;
-}
-
-.boton {
-    width: 70px;
-    height: 80px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align:center;
-    color: white;
-    background-color: #BF2604;
-    opacity: 0.6;
-}
-
-.boton:hover {
-    /* transform: scale(1.2); */
-    scale: 1.2;
-}
-
-.boton:active {
-    transform: scale(1.2);
-}
-
-.boton figcaption {
-    padding: 2px;
-    font-size: 65%;
-}
- 
 #info {
     grid-area: info;
     justify-content: center;
     align-content: center;
     height: 100%;
 }
-
-.boton-item {
-    width: 75%;
-    height: 75%;
-    border-radius: 10px;
-    padding: 3%;
-}
-
-/* #home-footer {
-    width: 100%;
-    bottom: 0;
-    position: fixed;
-    height: 30px;
-    color: white;
-    background-color:#0D0D0D;
-} */
 
 #footer {
     width: 100%;
@@ -181,42 +109,32 @@ main {
 }
 
 #info span {
-    font-weight: bolder;
+    font-weight: bold;
 }
-
-#cuenta_header, #movimientos_header {
-    width: 100%;
-    margin: 0;
-    word-spacing: 150px;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-    background-color: #bd7a6b;
-}
-
-#movimientos_header {
-    grid-area: movimientos_header;
-}  
 
 #cuenta_datos, #cuenta_tarjeta {
     margin: 0;
     padding: 0;
     padding-left: 10px;
-    width: 250px;
-    height: 150px;
-    border-radius: 10px;
-    font-size: 0.9em;
-    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    height: 160px;
+    max-width: 300px;
+    max-height: 160px;
+    border-radius: 10px;    
+    font-family: "Graduate", serif;
+    font-weight: 400;
 }
 
 #cuenta_datos {    
     grid-area: cuenta_datos;
-    padding-top: 10px;
-    background-color:  rgba(255,255,255,0.8);
+    font-size: 1em;
+    background-color:  #d97c2b;
 }
 
 #cuenta_tarjeta {    
-    grid-area: cuenta_tarjeta;    
-    background-color: rgba(191, 38, 4, 0.8);
+    grid-area: cuenta_tarjeta;
+    font-size: 0.9em;
+    background-color: #BF2604;
 }
 
 #logo_tarjeta {
@@ -241,7 +159,8 @@ main {
 }
 
 #cuenta_movimientos {
-    width: 430px;
+    width: 100%;
+    max-width: 100%;
     grid-area: cuenta_movimientos;
 }
 
@@ -267,10 +186,11 @@ main {
 }
 #cuenta_movimientos table .importe{
     width: 30%;
+    padding-right: 20px;
 }
 
 #cuenta_movimientos table tr:nth-child(even) {
-    background-color:  rgba(191, 38, 4, 0.8);
+    background-color:  lightgray !important
 }
 
 #cuenta_movimientos table tr:nth-child(odd) {
@@ -278,37 +198,30 @@ main {
 }
 
 #cuenta_movimientos table thead tr {
-    background-color:  rgba(13,13,13,0.5) !important;
-    color: white
-}
-  
-#cuenta_movimientos table thead {
-    text-align: end;   
+    background-color: #d97c2b !important;    
 }
   
 #cuenta_movimientos table tbody {
     display: block;
     overflow-y: auto;
-    overflow-x: auto;
-    text-align: end;
 }
   
 #cuenta_movimientos table tr {
     width: 100%;
     display: table;
     table-layout: fixed;
+    text-align: center;
 }
 
-#cuenta_movimientos table tr td.importe {
-    padding-right: 10px;
+#cuenta_movimientos .accordion-item {
+    min-width: 350px;    
 }
 
-#cuenta_movimientos table tr th.importe {
-    padding-right: 25px;
-}
+.accordion {
 
-#cuenta_movimientos table tr th.concepto {
-    padding-right: 15px;
+    --bs-accordion-border-radius: 30px !important;
+    --bs-accordion-inner-border-radius: 30px !important;
+     
 }
 
 #cuenta_movimientos .accordion-button {
@@ -319,135 +232,62 @@ main {
 #cuenta_movimientos .accordion-button:focus {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
+    color: white;
 }
 
 #info {
     display: grid;
-    justify-items: center;
+    justify-items: start;
     align-content: start;
-    grid-template-columns: 15% 25% 5% 40% 15%;
-    grid-template-rows: 50% 50%;
-    grid-gap: 5px;
-    grid-template-areas: ". cuenta_datos . cuenta_movimientos ."
-                         ". cuenta_tarjeta .  . .";
+    grid-template-columns: 10% 30% 50% 10%;
+    grid-template-rows: 30% 70%;
+    grid-gap: 10px;
+    grid-template-areas: ". cuenta_datos   cuenta_movimientos ."
+                         ". cuenta_tarjeta cuenta_movimientos .";
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 992px) {
     #info {
-        display: grid;
-        justify-items: center;
-        align-content: start;
-        grid-template-columns: 5% 35% 5% 50% 5%;
-        grid-template-rows: 50% 50%;
-        grid-gap: 5px;
-        grid-template-areas: ". cuenta_datos . cuenta_movimientos ."
-                             ". cuenta_tarjeta .  . .";
-    }
-}
-
-@media screen and (max-width: 768px ) {
-    #cuenta_movimientos {
-        width: 90%;
-    }
-
-    #cuenta_movimientos table {
-        font-size: 0.6em;
-    }
-    main {
-        display: grid;
-        width: 100%;
-        justify-items: auto;
-        height: calc(100% - 110px);
-        grid-template-columns: 20% 80%;
-        grid-template-rows:  10% 90%;
-        grid-template-areas: "bienvenida bienvenida"
-                             "botones info";
-                             
-    }
-    #info {
-        margin: 20px;
         display: grid;
         justify-items: start;
         align-content: start;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 30% 70%;
+        grid-template-columns: 5% 35% 55% 5%;
         grid-gap: 5px;
-        grid-template-areas: "cuenta_datos cuenta_tarjeta"
-                             "cuenta_movimientos cuenta_movimientos";
-    }
-    #botones {
-        margin: auto;
-        grid-area: botones;
-        display: grid;
-        width: 70%;
-        height: 450px;
-        grid-template-columns: 1fr;
-        grid-gap: 2%;
-        justify-items: center;
-        align-self: start;
+        grid-template-areas: ". cuenta_datos   cuenta_movimientos ."
+                             ". cuenta_tarjeta cuenta_movimientos .";
     }
     #cuenta_datos, #cuenta_tarjeta {
-        margin-top: 20px;
-        width: 200px;
-        height: 120px;
-        font-size: 0.65em;
-    }
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+        width: 250px;
+        height: 140px;        
+        font-size: 0.72em;
+    }                     
 }
 
-@media screen and (max-width: 576px) {
-    #botones {
-        height: 320px;
-    }
-    .boton {
-        width: 50px;
-        height: 57px;
-    }
-    .boton figcaption {
-        padding: 1px;
-        font-size: 45%;
-    }
-    #cuenta_datos {
-        width: 200px;
-        height: 100px;
-    }
-    #cuenta_tarjeta {
-        width: 200px;
-        height: 120px;
-    }
-    #cuenta_movimientos {
-        width: 300px;
-    }
-    #cuenta_movimientos table {
-        height: 100px;
-        display: block;
-        overflow-x: scroll;        
-    }
-    main {
-        display: grid;
-        width: 100%;
-        justify-items: center;
-        align-items: start;
-        height: calc(100% - 150px);
-        grid-template-columns: 20% 80%;
-        grid-template-rows:  10% 90%;
-        grid-template-areas: "bienvenida bienvenida"
-                             "botones info";
-                             
-                             
-    }
+@media screen and (max-width: 768px) {
     #info {
         display: grid;
         justify-items: center;
-        align-items: center;
-        grid-template-columns: 100%;
-        grid-template-rows: 30% 30% 40%;
+        align-content: start;
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 25% 25% 50%;
         grid-gap: 5px;
-        grid-template-areas: "cuenta_datos"
-                             "cuenta_tarjeta"
-                             "cuenta_movimientos";
+        grid-template-areas: ". cuenta_datos."
+                             ". cuenta_tarjeta ." 
+                             ". cuenta_movimientos .";
     }
-
+    #cuenta_datos, #cuenta_tarjeta {
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+        width: 250px;
+        height: 140px;        
+        font-size: 0.72em;
+    }                     
 }
+
 
 @media screen and (max-height: 650px) {
     #body {

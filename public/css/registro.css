@@ -137,13 +137,13 @@ ul li a:hover {
     color: #3c763d;
     border: 1px solid #d6e9c6;
     border-radius: 4px;
-    padding: 20px; 
+    padding: 20px;
     position: fixed;
     top: 50%;
-    right: 10px; 
+    right: 10px;
     transform: translateY(-50%);
-    max-width: 250px; 
-    text-align: right; 
+    max-width: 250px;
+    text-align: right;
 }
 
 @media (max-width: 768px) {
@@ -152,9 +152,6 @@ ul li a:hover {
         max-width: 100%;
     }
 
-    header {
-        padding: 15px;
-    }
 
     #logo {
         width: 60px;
@@ -166,13 +163,7 @@ ul li a:hover {
 }
 
 @media (max-width: 576px) {
-    .form-container {
-        padding: 20px;
-    }
 
-    header {
-        padding: 10px;
-    }
 
     #logo {
         width: 40px;
@@ -189,14 +180,14 @@ ul li a:hover {
     position: fixed;
     height: 30px;
     color: white;
-    background-color:#0D0D0D;
+    background-color: #0D0D0D;
 }
 
-#footer p{
-    font-size:.7rem;
-    padding-top:.5rem;
+#footer p {
+    font-size: .7rem;
+    padding-top: .5rem;
 }
 
-.naranja{
+.naranja {
     color: #d97c2b;
 }

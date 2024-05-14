@@ -141,6 +141,9 @@ ul li a:hover{
 
 #login-eye-icon {
     cursor:pointer;
+    position: relative;
+    bottom: 30px;
+    left: 95%;
 }
 
 #login-message-error-user {
@@ -223,5 +226,9 @@ ul li a:hover{
 
 .naranja{
     color: #d97c2b;
+}
+
+.imput-group {
+    display: block;
 }
 /*////////////////////////////////////////////////////////////*

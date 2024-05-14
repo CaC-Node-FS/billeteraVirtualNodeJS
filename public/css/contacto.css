@@ -149,10 +149,6 @@ label {
     .col-md-6 {
         flex: 0 0 100%;
         max-width: 100%;
-    }
-
-    header {
-        padding: 15px;
 
     }
 
@@ -165,18 +161,10 @@ label {
         margin-left: 15px;
 
     }
-    
+
 }
 
 @media (max-width: 576px) {
-    .form-container {
-        padding: 20px;
-    }
-
-    header {
-        padding: 10px;
-
-    }
 
     #logo {
         width: 40px;
@@ -195,14 +183,14 @@ label {
     position: fixed;
     height: 30px;
     color: white;
-    background-color:#0D0D0D;
+    background-color: #0D0D0D;
 }
 
-#footer p{
-    font-size:.7rem;
-    padding-top:.5rem;
+#footer p {
+    font-size: .7rem;
+    padding-top: .5rem;
 }
 
-.naranja{
+.naranja {
     color: #d97c2b;
 }

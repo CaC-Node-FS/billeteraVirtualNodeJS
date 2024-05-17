@@ -44,7 +44,6 @@ function copiarCBU() {
     setTimeout(() => {document.getElementById("CBU-copiado").style.visibility = 'hidden'}, 500)
 }
 
-
 ///BOTONES///
 // botons.forEach((x) =>{x.addEventListener("click", function() {
 //     //vista de botones por defecto

@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*//////////////////////////////////////////////////////////////*/
+html, body {
+    height: 100%;
+}
+
+.img-header{
+    width: 4rem;
+}
+
+.navbar-brand {
+    font-size: 1em !important;
+}
+
+ul li a:hover{
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+
+#vista {
+    height: calc(100vh - 120px);
+}
+
+main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas: "info";
+}
+
+.accordion {
+    --bs-accordion-border-radius: 30px !important;
+    --bs-accordion-inner-border-radius: 30px !important;
+}
+
+#inversiones-menu {
+    grid-area: inversiones-menu;
+    width: 100%;
+    padding: 10px;
+}
+
+#info {
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 90%;
+    grid-gap: 10px;
+    grid-template-areas: " . . ."
+                         ". inversiones-menu .";
+}
+
+#inversiones-menu .nav-link {
+    margin: 2px;
+    background-color: #d97c2b;
+    opacity: 1;
+    color: white;
+}
+
+#inversiones-menu .nav-link:hover {
+    background-color: #f23005;
+    opacity: 0.8;
+    color: white;
+}
+
+#inversiones-menu .nav-link.active {
+    background-color: #f23005 !important;
+    opacity: 1;
+    color: white;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* input[type="number"] {
+    -moz-appearance: textfield;
+} */
+
+#montoPF {
+    font-family: "Graduate", serif;
+}
+
+#misPF, #historialPF {
+    margin-top: 20px;
+}
+
+#inversiones-menu {
+    width: 100%;
+    max-width: 750px;
+    min-width: 300px;
+    grid-area: inversiones-menu;
+}
+
+#inversiones-menu .form-select, #inversiones-menu input {
+    box-shadow: 2px 2px #d97c2b;
+    
+}
+
+#inversiones-menu .form-select:focus, #inversiones-menu input:focus {
+    box-shadow: none;
+    border: 1px solid #f23005 ;
+}
+
+#inversiones-menu .accordion-item {
+    min-width: 300px;    
+}
+
+#inversiones-menu .accordion-button:not(collapsed) {
+    background-color: #d97c2b;
+}
+
+#inversiones-menu  #nuevoPF-button {
+    width: 200px !important;
+    margin-top: 10px;
+    box-shadow: none;
+    border: none;
+    background-color: #d97c2b;
+    color: white;
+    font-size: 1em;
+}
+
+#inversiones-menu  #nuevoPF-button:hover {
+    border:none;
+    background-color:#f23005;
+    color: white;
+}
+
+#inversiones-menu  #nuevoPF-button:active {
+    border:none;
+    background-color:#f23005 !important;
+    color: white !important;
+    transform: scale(1.2);
+}
+
+
+
+#inversiones-menu .accordion-button:focus {
+    --bs-accordion-btn-focus-box-shadow:none;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#inversiones-menu .accordion-button:not(collapsed) {
+    --bs-accordion-btn-focus-box-shadow:none;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#inversiones-menu nav button {
+    border-radius: 30px;
+}
+
+#popupPF {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    width: 320px;
+    height: 240px;
+    z-index: 10;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px #f23005;
+}
+
+#popupPF p {
+    margin-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 0.8em;
+}
+
+#popupPF h6 {
+    background-color: lightgray;
+    margin-top: 15px;
+    padding-left: 5px;
+}
+
+#popupPF button {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #d97c2b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 75px;
+    height: 25px;
+    font-size: 0.7em;
+}
+
+#tasasPF h6 {
+    margin-top: 15px;
+}
+
+#tasas-table {
+    font-size: 0.7em;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-height: 160px;
+    border-collapse: separate;
+    border-spacing: 0 3px;
+}
+
+#tasas-table p {
+    text-align: start;
+    margin: 0;
+}
+
+#tasas-table td {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: "Graduate", serif;
+}
+
+#tasas-table .fecha, #tasas-table .tipo {
+    width: 10%;
+}
+#tasas-table .concepto {
+    width: 50%;
+}
+#tasas-table .importe{
+    width: 30%;
+    padding-right: 20px;
+}
+
+#tasas-table tr:nth-child(even) {
+    background-color:  lightgray !important
+}
+
+#tasas-table tr:nth-child(odd) {
+    background-color: rgba(255,255,255,0.8);
+}
+
+#tasas-table thead tr {
+    background-color: #d97c2b !important;    
+}
+  
+#tasas-table tbody {
+    display: block;
+    overflow-y: auto;
+}
+  
+#tasas-table tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    text-align: start;
+}
+
+#tasas-table .accordion-item {
+    min-width: 350px;    
+}
+
+
+.accordion-body #logo {
+    width: 150px;
+}
+
+.accordion-body figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+@media screen and (max-height: 650px) {
+    #body {
+        height: 650px;
+        overflow-y: scroll;
+    }
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
+}
+
+#footer p{
+    font-size:.7rem;
+    padding-top:.5rem;
+}
+
+.naranja{
+    color: #d97c2b;
+}
+/*///////////*/
+
+/*////////////////////////////////////////////////////////////*

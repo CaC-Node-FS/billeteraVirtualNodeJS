@@ -41,7 +41,7 @@ main {
     width: 100%;
     min-height: 100%;
     grid-template-columns: 100%;
-    grid-template-rows:  8% 92%;
+    grid-template-rows:  10% 90%;
     grid-template-areas: "bienvenida"
                          "info";
 }
@@ -176,6 +176,7 @@ main {
 #cuenta_movimientos table td {
     padding-left: 2%;
     padding-right: 2%;
+    font-family: "Graduate", serif;
 }
 
 #cuenta_movimientos table .fecha, #cuenta_movimientos table .tipo {
@@ -233,6 +234,10 @@ main {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
     color: white;
+}
+
+#cuenta_movimientos .accordion-button:not(collapsed) {
+    background-color: #d97c2b;
 }
 
 #info {
@@ -300,6 +305,7 @@ h1 {
     color: white;
     text-align: center;
 }
+
 
 /*///////////*/
 

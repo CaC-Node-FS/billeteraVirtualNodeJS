@@ -78,9 +78,7 @@ main {
 }
  
 #saldo {
-
     visibility: hidden;
-    
 }
 
 #info {
@@ -160,7 +158,7 @@ main {
 
 #cuenta_movimientos {
     width: 100%;
-    max-width: 100%;
+    /* max-width: 750px; */
     grid-area: cuenta_movimientos;
 }
 
@@ -238,13 +236,13 @@ main {
 
 #info {
     display: grid;
-    justify-items: start;
+    justify-items: center;
     align-content: start;
-    grid-template-columns: 10% 30% 50% 10%;
+    grid-template-columns: 10% 40% 40% 10%;
     grid-template-rows: 30% 70%;
     grid-gap: 10px;
-    grid-template-areas: ". cuenta_datos   cuenta_movimientos ."
-                         ". cuenta_tarjeta cuenta_movimientos .";
+    grid-template-areas: ". cuenta_datos cuenta_tarjeta ."
+                         ". cuenta_movimientos cuenta_movimientos .";
 }
 
 #desdeDate {
@@ -260,7 +258,7 @@ main {
 }
 
 #movHistoricos {
-    width: 100%;
+    width: 60%;
     display: grid;
     grid-template-columns: 37.5% 37.5% 25%;
     grid-template-rows: 70% 30%;
@@ -287,7 +285,6 @@ main {
 #buscarMovButton {
     width: 90px;
     height: 40px;
-    /* margin-bottom: 5px; */
     border: none;
     border-radius: 10px;
     background-color: #BF2604;
@@ -303,10 +300,10 @@ main {
         display: grid;
         justify-items: start;
         align-content: start;
-        grid-template-columns: 5% 35% 55% 5%;
+        grid-template-columns: 5% 45% 45% 5%;
         grid-gap: 5px;
-        grid-template-areas: ". cuenta_datos   cuenta_movimientos ."
-                             ". cuenta_tarjeta cuenta_movimientos .";
+        grid-template-areas: ". cuenta_datos  cuenta_tarjeta ."
+                             ". cuenta_movimientos cuenta_movimientos .";
     }
     #cuenta_datos, #cuenta_tarjeta {
         margin: 0;
@@ -315,10 +312,23 @@ main {
         width: 250px;
         height: 140px;        
         font-size: 0.72em;
-    }                     
+    }
+    #movHistoricos {
+        width: 75%;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
+    #desdeDate, #hastaDate {
+        font-size: 0.75em;
+    }
+    #buscarMovButton {
+        width: 70px;
+        font-size: 0.75em;
+    }
+    .accordion-body table td {
+        font-size: 0.7em;
+    }
     #info {
         display: grid;
         justify-items: center;
@@ -338,22 +348,10 @@ main {
         height: 140px;        
         font-size: 0.72em;
     }
-}
-
-@media screen and (max-width: 576px) {
-    #desdeDate, #hastaDate {
-        font-size: 0.75em;
-    }
-    #buscarMovButton {
-        width: 70px;
-        font-size: 0.75em;
-    }
-    .accordion-body table td {
-        font-size: 0.7em;
+    #movHistoricos {
+        width: 100%;
     }
 }
-
-
 
 @media screen and (max-height: 650px) {
     #body {

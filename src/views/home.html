@@ -85,7 +85,8 @@
 
     <main>
 
-        <h5 id="text-bienvenida">Hola, <span>María Rosa</span></h5>
+        <!-- <h5 id="text-bienvenida">Hola, <span>María Rosa</span></h5> -->
+        <h5></h5>
 
         <div id="vista">
 
@@ -123,7 +124,17 @@
                             </h2>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                                 <div class="accordion-body">
-                                    Falta agregar calendario de búsqueda
+                                    <form action="#" id="movHistoricos">
+                                    <div id="desdeDate">
+                                        <label for="desdeDate">Desde</label>
+                                        <input type="date" min="2024-01-01" required>
+                                    </div>
+                                    <div id="hastaDate">    
+                                        <label for="hastaDate">Hasta</label>
+                                        <input type="date" min="2024-01-01" required>
+                                    </div>                                    
+                                    <input type="submit" id="buscarMovButton" value="BUSCAR">
+                                    </form>
                                 </div>
                             </div>
                         </div>

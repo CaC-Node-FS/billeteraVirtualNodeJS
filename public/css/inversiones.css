@@ -140,6 +140,10 @@ input::-webkit-inner-spin-button {
 }
 
 
+#inversiones-menu .accordion-button {
+    color: white;
+}
+
 
 #inversiones-menu .accordion-button:focus {
     --bs-accordion-btn-focus-box-shadow:none;

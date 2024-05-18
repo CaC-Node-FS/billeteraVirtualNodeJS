@@ -8,7 +8,7 @@ const form = document.getElementById("login");
 
       if(document.getElementById("usuario").value == "") {
 
-        event.preventDefault();
+        event.preventDefault()
       
         document.getElementById("login-message-error-user").style.visibility = "visible"
       
@@ -19,7 +19,7 @@ const form = document.getElementById("login");
 
       if(document.getElementById("clave").value.length < 8) {
 
-        event.preventDefault();
+        event.preventDefault()
       
         document.getElementById("login-message-error-password").style.visibility = "visible"
       

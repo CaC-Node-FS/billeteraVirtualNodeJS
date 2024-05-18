@@ -225,11 +225,6 @@ main {
      
 }
 
-#cuenta_movimientos .accordion-button {
-    background-color: white;
-    
-}
-
 #cuenta_movimientos .accordion-button:focus {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
@@ -238,6 +233,7 @@ main {
 
 #cuenta_movimientos .accordion-button:not(collapsed) {
     background-color: #d97c2b;
+    color: white;
 }
 
 #info {
@@ -249,6 +245,57 @@ main {
     grid-gap: 10px;
     grid-template-areas: ". cuenta_datos   cuenta_movimientos ."
                          ". cuenta_tarjeta cuenta_movimientos .";
+}
+
+#desdeDate {
+    grid-area: desdeDate;
+}
+
+#hastaDate {
+    grid-area: hastaDate;
+}
+
+#buscarMovButton {
+    grid-area: buscarMovButton;
+}
+
+#movHistoricos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 37.5% 37.5% 25%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: "desdeDate hastaDate buscarMovButton"
+                          "h6 h6 h6";
+    justify-items: center;
+    align-items: end;
+}
+
+#movHistoricos h6 {
+    grid-area: h6;
+    margin: 0;
+    width: 100%;
+}
+
+#desdeDate input, #hastaDate input {
+    display: block;    
+    width: 90%;
+    border: 2px solid #d97c2b;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#buscarMovButton {
+    width: 90px;
+    height: 40px;
+    /* margin-bottom: 5px; */
+    border: none;
+    border-radius: 10px;
+    background-color: #BF2604;
+    color: white;
+}
+
+#buscarMovButton:active {
+    transform: scale(1.2);
 }
 
 @media screen and (max-width: 992px) {
@@ -290,8 +337,22 @@ main {
         width: 250px;
         height: 140px;        
         font-size: 0.72em;
-    }                     
+    }
 }
+
+@media screen and (max-width: 576px) {
+    #desdeDate, #hastaDate {
+        font-size: 0.75em;
+    }
+    #buscarMovButton {
+        width: 70px;
+        font-size: 0.75em;
+    }
+    .accordion-body table td {
+        font-size: 0.7em;
+    }
+}
+
 
 
 @media screen and (max-height: 650px) {

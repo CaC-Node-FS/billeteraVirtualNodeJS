@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -56,12 +57,12 @@ body {
     box-sizing: border-box;
 }
 
-.img-header {
-    width: 4rem;
+.img-header{
+    width: 3rem;
 }
 
 .navbar-brand {
-    font-size: 1em !important;
+    font-size: 1.3em !important;
 }
 
 ul li a:hover {

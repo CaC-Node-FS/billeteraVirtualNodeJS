@@ -46,12 +46,10 @@ main {
 #info {
     height: 100%;
     display: grid;
-    justify-items: center;
-    align-content: start;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 10% 90%;
     grid-gap: 10px;
-    grid-template-areas: " . . ."
+    grid-template-areas: ". . ."
                          ". inversiones-menu .";
 }
 
@@ -93,14 +91,12 @@ input::-webkit-inner-spin-button {
 
 #inversiones-menu {
     width: 100%;
-    max-width: 750px;
-    min-width: 300px;
+    justify-content: center;
     grid-area: inversiones-menu;
 }
 
 #inversiones-menu .form-select, #inversiones-menu input {
     box-shadow: 2px 2px #d97c2b;
-    
 }
 
 #inversiones-menu .form-select:focus, #inversiones-menu input:focus {
@@ -109,7 +105,8 @@ input::-webkit-inner-spin-button {
 }
 
 #inversiones-menu .accordion-item {
-    min-width: 300px;    
+    /* width: 750px; */
+    min-width: 350px;    
 }
 
 #inversiones-menu .accordion-button:not(collapsed) {
@@ -139,11 +136,9 @@ input::-webkit-inner-spin-button {
     transform: scale(1.2);
 }
 
-
 #inversiones-menu .accordion-button {
     color: white;
 }
-
 
 #inversiones-menu .accordion-button:focus {
     --bs-accordion-btn-focus-box-shadow:none;
@@ -226,17 +221,6 @@ input::-webkit-inner-spin-button {
     font-family: "Graduate", serif;
 }
 
-#tasas-table .fecha, #tasas-table .tipo {
-    width: 10%;
-}
-#tasas-table .concepto {
-    width: 50%;
-}
-#tasas-table .importe{
-    width: 30%;
-    padding-right: 20px;
-}
-
 #tasas-table tr:nth-child(even) {
     background-color:  lightgray !important
 }
@@ -261,11 +245,6 @@ input::-webkit-inner-spin-button {
     text-align: start;
 }
 
-#tasas-table .accordion-item {
-    min-width: 350px;    
-}
-
-
 .accordion-body #logo {
     width: 150px;
 }
@@ -280,6 +259,18 @@ input::-webkit-inner-spin-button {
         height: 650px;
         overflow-y: scroll;
     }
+}
+
+@media screen and (max-width: 476px) {
+    #info {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        grid-gap: 10px;
+        grid-template-areas: "."
+                             "inversiones-menu";
+    }    
 }
 
 #footer {

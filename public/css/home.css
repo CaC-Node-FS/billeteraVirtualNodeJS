@@ -217,10 +217,8 @@ main {
 }
 
 .accordion {
-
     --bs-accordion-border-radius: 30px !important;
     --bs-accordion-inner-border-radius: 30px !important;
-     
 }
 
 #cuenta_movimientos .accordion-button:focus {

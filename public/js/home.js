@@ -44,7 +44,7 @@ document.getElementById("movHistoricos").addEventListener("submit", function(eve
         if(document.getElementById("buscarMovButton").value == "LIMPIAR") {
             document.getElementById("buscarMovButton").value = "BUSCAR"
             document.getElementById("movHistoricos").parentNode.removeChild(document.getElementById("movHistoricos").parentNode.lastChild)
-            document.getElementById("movHistoricos").parentNode.removeChild(document.getElementById("movHistoricos").parentNode.lastChild)
+            document.getElementById("movHistoricos").reset()
         }
     }    
 })

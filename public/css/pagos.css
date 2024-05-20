@@ -1,0 +1,415 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*//////////////////////////////////////////////////////////////*/
+html, body {
+    height: 100%;
+}
+
+.img-header{
+    width: 4rem;
+}
+
+.navbar-brand {
+    font-size: 1em !important;
+}
+
+ul li a:hover{
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+
+#vista {
+    height: calc(100vh - 120px);
+}
+
+main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas: "info";
+}
+
+.accordion {
+    --bs-accordion-border-radius: 30px !important;
+    --bs-accordion-inner-border-radius: 30px !important;
+}
+
+#pagos-menu {
+    grid-area: pagos-menu;
+    width: 100%;
+    padding: 10px;
+}
+
+#info {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 90%;
+    grid-gap: 10px;
+    grid-template-areas: " . . ."
+                         ". pagos-menu .";
+}
+
+#pagos-menu .nav-link {
+    margin: 2px;
+    background-color: #d97c2b;
+    opacity: 1;
+    color: white;
+}
+
+#pagos-menu .nav-link:hover {
+    background-color: #f23005;
+    opacity: 0.8;
+    color: white;
+}
+
+#pagos-menu .nav-link.active {
+    background-color: #f23005 !important;
+    opacity: 1;
+    color: white;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* input[type="number"] {
+    -moz-appearance: textfield;
+} */
+
+#pagos-menu .form-select, #pagos-menu input {
+    box-shadow: 2px 2px #d97c2b;
+}
+
+#pagos-menu .form-select:focus, #pagos-menu input:focus {
+    box-shadow: none;
+    border: 1px solid #f23005 ;
+}
+
+#servicio-confirmar-button, #servicio-cancelar-button {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#servicio-confirmar-button:focus, #servicio-cancelar-button:focus {
+    background-color: #f23005;
+}
+
+#servicio-confirmar-button:active, #servicio-cancelar-button:active {
+    background-color: #f23005;
+    transform: scale(1.2);
+}
+
+#pagos-menu .accordion-item {
+    min-width: 300px;    
+}
+
+#pagos-menu .accordion-button:not(collapsed) {
+    background-color: #d97c2b;
+}
+
+#nuevo-servicio-form {
+    visibility: hidden;
+}
+
+#pagos-menu  #nuevoServicio-button {
+    width: 200px !important;
+    margin-top: 10px;
+    box-shadow: none;
+    border: none;
+    background-color: #d97c2b;
+    color: white;
+    font-size: 1em;
+}
+
+#pagos-menu button:hover {
+    border:none;
+    background-color:#f23005;
+    color: white;
+}
+
+#pagos-menu  #nuevoServicio-button:active {
+    border:none;
+    background-color:#f23005 !important;
+    color: white !important;
+    transform: scale(1.2);
+}
+#pagos-menu #nuevoServicio input {
+    box-shadow: none;
+}
+
+#pagos-menu .accordion-button {
+    color: white;
+}
+
+#pagos-menu .accordion-button:focus {
+    --bs-accordion-btn-focus-box-shadow:none;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#pagos-menu .accordion-button:not(collapsed) {
+    --bs-accordion-btn-focus-box-shadow:none;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#pagos-menu nav button {
+    border-radius: 30px;
+}
+
+.bi, .bi-trash3 {
+    display: block !important;
+    cursor: pointer;
+    color: #d97c2b;
+}
+
+.bi:hover, .bi-trash3:hover {
+    color: #f23005;
+}
+
+.bi:active, .bi-trash3:active {
+    color: #f23005;
+    scale: 1.2 !important;
+}
+
+.col-boleta-servicio, .col-boleta-pagar {
+    cursor: pointer;
+    width: 10%;
+}
+
+.col-boleta-servicio:active, .col-boleta-pagar:active {
+    transform: scale(1.2);
+}
+
+.col-eliminar-servicio, .col-boleta-pagar { 
+    width: 5%;
+}
+
+#serviciosAdheridos-table, #historialPagos-table, #agendaPagos-table {
+    font-size: 0.8em;
+    display: flex;
+    flex-flow: column;
+    table-layout: fixed;
+    width: 100%;
+    max-height: 160px;
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    margin-bottom: 20px;
+    font-family: "Graduate", serif;
+}
+
+#serviciosAdheridos-table tr, #historialPagos-table tr, #agendaPagos-table tr {
+    text-align: start;
+    margin: 0;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+#serviciosAdheridos-table td, #historialPagos-table td, #agendaPagos-table td {
+    font-family: "Graduate", serif;
+}
+
+#serviciosAdheridos-table tr:nth-child(even), #historialPagos-table tr:nth-child(even), #agendaPagos-table tr:nth-child(even) {
+    background-color:  lightgray !important
+}
+
+#serviciosAdheridos-table tr:nth-child(odd), #historialPagos-table tr:nth-child(odd), #agendaPagos-table tr:nth-child(odd) {
+    background-color: rgba(255,255,255,0.8) !important;
+}
+
+#serviciosAdheridos-table thead tr:first-child, #historialPagos-table thead tr:first-child, #agendaPagos-table thead tr:first-child {
+    background-color: #d97c2b !important;    
+}
+  
+#serviciosAdheridos-table tbody, #historialPagos-table tbody, #agendaPagos-table tbody {
+    display: block;
+    overflow-y: auto;
+}
+
+#nuevoServicio-confirmar, #nuevoServicio-cancelar {
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.servicio-pagar-button {
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d97c2b;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    
+}
+
+#popupServicio {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    width: 320px;
+    height: 100px;
+    z-index: 10;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px #f23005;
+    text-align: center;
+}
+
+#popupServicio p {
+    margin-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 0.8em;
+}
+
+/* #popupServicio h6 {
+    background-color: lightgray;
+    margin-top: 15px;
+    padding-left: 5px;
+} */
+
+#popupServicio button {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #d97c2b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 75px;
+    height: 25px;
+    font-size: 0.7em;
+}
+
+.bi-download {
+    margin-top: 30px;
+}
+
+.bi-x-lg {
+    font-size: 0.8em !important;
+}
+
+#popupBoleta {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    width: 320px;
+    height: 300px;
+    z-index: 10;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px #f23005;
+    text-align: center;
+}
+
+#popupBoleta p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 5px;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+}
+
+#popupBoleta h6 {
+    background-color: lightgray;
+    padding-left: 5px;
+}
+
+#boleta-logo {
+    width: 60px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#boleta-logo-texto {
+    text-align: start;
+    margin-right: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+#mas-icon {
+    width: 1.2em;
+}
+
+#mas-servicio-button {
+    background-color: transparent;
+    border: none;
+}
+
+#mas-servicio-button:hover {
+    background-color: transparent !important;
+}
+
+#mas-servicio-button:active {
+    transform: scale(1.2);
+    background-color: transparent; 
+}
+
+.accordion-body section p, .accordion-body section label {
+    margin: 0;  
+}
+
+.accordion-body figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+@media screen and (max-height: 650px) {
+    #body {
+        height: 650px;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 476px) {
+    #info {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        grid-gap: 10px;
+        grid-template-areas: "."
+                             "pagos-menu";
+    }    
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
+}
+
+#footer p{
+    font-size:.7rem;
+    padding-top:.5rem;
+}
+
+.naranja{
+    color: #d97c2b;
+}
+/*///////////*/
+
+/*////////////////////////////////////////////////////////////*

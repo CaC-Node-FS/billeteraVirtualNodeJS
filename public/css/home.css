@@ -9,11 +9,11 @@ html, body {
 }
 
 .img-header{
-    width: 4rem;
+    width: 3rem;
 }
 
 .navbar-brand {
-    font-size: 1em !important;
+    font-size: 1.3em !important;
 }
 
 ul li a:hover{

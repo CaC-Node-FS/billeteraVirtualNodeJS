@@ -163,7 +163,7 @@ main {
 }
 
 #cuenta_movimientos table {
-    font-size: 0.7em;
+    font-size: 0.8em;
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -174,7 +174,13 @@ main {
 #cuenta_movimientos table td {
     padding-left: 2%;
     padding-right: 2%;
+    height: 50px;
     font-family: "Graduate", serif;
+}
+
+
+#cuenta_movimientos table tr {
+    height: 50px;
 }
 
 #cuenta_movimientos table .fecha, #cuenta_movimientos table .tipo {
@@ -337,6 +343,9 @@ main {
         grid-template-areas: ". cuenta_datos."
                              ". cuenta_tarjeta ." 
                              ". cuenta_movimientos .";
+    }
+    #cuenta_movimientos table {
+        font-size: 0.7em;
     }
     #cuenta_datos, #cuenta_tarjeta {
         margin: 0;

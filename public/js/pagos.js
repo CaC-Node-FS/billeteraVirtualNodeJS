@@ -261,7 +261,7 @@ document.getElementById("boleta-ejemplo").addEventListener("click", () => {
 
     document.getElementById("dialog-boleta-descargar").addEventListener("click", () => {
       let boleta = document.getElementById('popupBoleta')
-      html2pdf().set(opt).from(boleta).save('boleta.pdf')     //no funciona, genera un pdf en blanco
+      html2pdf().from(boleta).save('boleta.pdf')     //no funciona, genera un pdf en blanco
 
     })
 

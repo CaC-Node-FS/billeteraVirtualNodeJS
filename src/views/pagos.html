@@ -109,10 +109,10 @@
                       <table id="agendaPagos-table">
                         <thead>
                           <tr>
-                            <th id="thServicio">Servicio/Impuesto</th>
-                            <th id="thFechaVto">Fecha de vencimiento</th>
-                            <th id="thImporte">Importe ($)</th>
-                            <th class="col-boleta-pagar"></th>
+                            <th>Servicio/Impuesto</th>
+                            <th>Vencimiento</th>
+                            <th>Importe ($)</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -149,21 +149,24 @@
                       <table id="serviciosAdheridos-table">
                         <thead>
                           <tr>
-                            <th id="thServicio">Servicio/Impuesto</th>
-                            <th id="thCodigo">Código de pago</th>
-                            <th class="col-eliminar-servicio"></th>
+                            <th>Servicio/Impuesto</th>
+                            <th>Código de pago</th>
+                            <th></th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>Camuzzi Gas Pampeana</td>
                             <td>10000081100702546</td>
-                            <td class="col-eliminar-servicio"><i class="bi bi-trash3 eliminar-servicio"></i></td>
+                            <td></td>
+                            <td class="col-eliminar-servicio"><i class="bi bi-trash3"></i></td>
                           </tr>
                           <tr>
                             <td>Buenos Aires - Arba Inmobiliario</td>
                             <td>00530754328</td>
-                            <td class="col-eliminar-servicio"><i class="bi bi-trash3 eliminar-servicio"></i></td>
+                            <td></td>
+                            <td class="col-eliminar-servicio"><i class="bi bi-trash3"></i></td>
                           </tr>
                         </tbody>
                       </table>
@@ -217,10 +220,10 @@
                       <table id="historialPagos-table">
                         <thead>
                           <tr>
-                            <th id="thServicio">Servicio/Impuesto</th>
-                            <th id="thFechaPago">Fecha de pago</th>
-                            <th id="thImporte">Importe ($)</th>
-                            <th class="col-boleta-servicio"></th>
+                            <th>Servicio/Impuesto</th>
+                            <th>Fecha de pago</th>
+                            <th>Importe ($)</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -228,7 +231,13 @@
                             <td>Camuzzi Gas Pampeana</td>
                             <td>05/05/2024</td>
                             <td>6578,34</td>
-                            <td class="col-boleta-servicio" id="boleta-ejemplo" ><img src="../../public/media/boleta-icon.svg"></td>
+                            <td class="col-boleta-servicio"><img class="servicio-boleta-icon" src="../../public/media/boleta-icon.svg"></td>
+                          </tr>
+                          <tr>
+                            <td>Buenos Aires - Arba Inmobiliario</td>
+                            <td>05/05/2024</td>
+                            <td>6578,34</td>
+                            <td class="col-boleta-servicio"><img class="servicio-boleta-icon" src="../../public/media/boleta-icon.svg"></td>
                           </tr>
                         </tbody>
                       </table>

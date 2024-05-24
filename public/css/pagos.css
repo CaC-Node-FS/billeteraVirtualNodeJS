@@ -46,7 +46,7 @@ main {
 #info {
     height: 100%;
     display: grid;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 5% 90% 5%;
     grid-template-rows: 10% 90%;
     grid-gap: 10px;
     grid-template-areas: " . . ."
@@ -168,7 +168,8 @@ input::-webkit-inner-spin-button {
 }
 
 .bi, .bi-trash3 {
-    display: block !important;
+    /* display: block !important; */
+    font-size: 1.5em !important;
     cursor: pointer;
     color: #d97c2b;
 }
@@ -184,23 +185,20 @@ input::-webkit-inner-spin-button {
 
 .col-boleta-servicio, .col-boleta-pagar {
     cursor: pointer;
-    width: 10%;
+   
 }
 
 .col-boleta-servicio:active, .col-boleta-pagar:active {
     transform: scale(1.2);
 }
 
-.col-eliminar-servicio, .col-boleta-pagar { 
-    width: 5%;
-}
-
 #serviciosAdheridos-table, #historialPagos-table, #agendaPagos-table {
     font-size: 0.8em;
-    display: flex;
-    flex-flow: column;
-    table-layout: fixed;
-    width: 100%;
+    /* display: flex; */
+    /* flex-flow: column; */
+    /* table-layout: fixed; */
+   
+    width: 100% !important;
     max-height: 160px;
     border-collapse: separate;
     border-spacing: 0 3px;
@@ -209,12 +207,28 @@ input::-webkit-inner-spin-button {
 }
 
 #serviciosAdheridos-table tr, #historialPagos-table tr, #agendaPagos-table tr {
-    text-align: start;
-    margin: 0;
-    width: 100%;
-    display: table;
-    table-layout: fixed;
+    text-align: left;
+    height: 50px;
+    /* display: table; */
+    /* table-layout: fixed; */
 }
+ 
+
+table th:nth-child(1) {
+    width: 40%;    
+}
+
+table th:nth-child(2) {
+    width: 30%;
+}
+
+table th:nth-child(3) {
+    width: 20%;
+}
+
+table th:nth-child(4) {
+    width: 10%;
+} 
 
 #serviciosAdheridos-table td, #historialPagos-table td, #agendaPagos-table td {
     font-family: "Graduate", serif;
@@ -231,11 +245,11 @@ input::-webkit-inner-spin-button {
 #serviciosAdheridos-table thead tr:first-child, #historialPagos-table thead tr:first-child, #agendaPagos-table thead tr:first-child {
     background-color: #d97c2b !important;    
 }
-  
+/*   
 #serviciosAdheridos-table tbody, #historialPagos-table tbody, #agendaPagos-table tbody {
     display: block;
     overflow-y: auto;
-}
+} */
 
 #nuevoServicio-confirmar, #nuevoServicio-cancelar {
     width: 100px;
@@ -243,7 +257,7 @@ input::-webkit-inner-spin-button {
     margin-right: 10px;
 }
 
-.servicio-pagar-button {
+/* .servicio-pagar-button {
     width: 50px;
     border: none;
     border-radius: 10px;
@@ -251,8 +265,7 @@ input::-webkit-inner-spin-button {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8em;
-    
-}
+} */
 
 #popupServicio {
     position: fixed;
@@ -334,11 +347,11 @@ input::-webkit-inner-spin-button {
     padding-left: 5px;
 }
 
-#boleta-logo {
+/* .servicio-boleta-icon {
     width: 60px;
     margin-top: 10px;
     margin-bottom: 20px;
-}
+} */
 
 #boleta-logo-texto {
     text-align: start;
@@ -381,6 +394,12 @@ input::-webkit-inner-spin-button {
     }
 }
 
+@media screen and (max-width: 576px) {
+    table td, table th {
+        font-size: 0.7em !important;
+    }
+}
+
 @media screen and (max-width: 476px) {
     #info {
         height: 100%;
@@ -390,7 +409,13 @@ input::-webkit-inner-spin-button {
         grid-gap: 10px;
         grid-template-areas: "."
                              "pagos-menu";
-    }    
+    }
+    table td, table th {
+        font-size: 0.6em !important;
+    }
+    .servicio-pagar-icon, .servicio-boleta-icon {
+        width: 16px !important;
+    }
 }
 
 #footer {

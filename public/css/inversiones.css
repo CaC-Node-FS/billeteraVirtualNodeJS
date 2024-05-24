@@ -270,7 +270,10 @@ input::-webkit-inner-spin-button {
         grid-gap: 10px;
         grid-template-areas: "."
                              "inversiones-menu";
-    }    
+    }
+    th, td {
+        font-size: 2em !important;
+    }
 }
 
 #footer {

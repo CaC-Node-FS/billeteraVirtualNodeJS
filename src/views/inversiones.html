@@ -265,11 +265,31 @@
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                <div class="accordion-body text-center">
+                <div class="accordion-body text-center p-5">
                   <figure>
                     <img id="logo" src="../../public/media/logo.png" alt="">
                     <figcaption>En desarrollo</figcaption>
                   </figure>
+
+                  <h3>Compra-venta de moneda extranjera</h3>
+                  <div class="moneda">
+                    <select id="moneda-uno">
+                      <option value="ARS" selected>Pesos</option>
+                      <option value="USD">Dolares</option>
+                      <option value="EUR">Euros</option>
+                      <option value="BRL">Reales</option>
+                    </select>
+                    <input type="number" id="cantidad-uno" placeholder="0">
+                  </div>
+                  <div class="moneda">
+                    <select id="moneda-dos">
+                        <option value="ARS">Pesos</option>
+                        <option value="USD" selected>Dolares</option>
+                        <option value="EUR">Euros</option>
+                        <option value="BRL">Reales</option>
+                      </select>
+                    <input type="number" id="cantidad-dos" placeholder="0">
+                  </div>
                 </div>
               </div>
             </div>

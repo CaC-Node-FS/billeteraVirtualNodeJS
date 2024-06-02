@@ -254,6 +254,40 @@ input::-webkit-inner-spin-button {
     font-weight: 600;
 }
 
+/* Compra-venta de divisas */
+
+
+.moneda{
+    margin-bottom: 10px;
+}
+
+.moneda select{
+    color:white;
+    background-color: #d97c2b;
+}
+
+.moneda select, .moneda input{
+    border:1px solid #d97c2b;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow:none !important;
+}
+
+.moneda input{
+    color:#d97c2b;
+    font-weight: bold;
+}
+
+#btn-comprar{
+    background-color: #d97c2b;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
 @media screen and (max-height: 650px) {
     #body {
         height: 650px;

@@ -273,7 +273,7 @@ input::-webkit-inner-spin-button {
     box-shadow:none !important;
 }
 
-.moneda input{
+.moneda input, #info-taza{
     color:#d97c2b;
     font-weight: bold;
 }

@@ -68,5 +68,53 @@ document.getElementById("nuevoPF-form").addEventListener("submit", (e) => {
 
 })
 
+//Sección compra-venta de divisas
+const monedaUno = document.getElementById("moneda-uno")
+const monedaDos = document.getElementById("moneda-dos")
+const cantidadUno = document.getElementById("cantidad-uno")
+const cantidadDos = document.getElementById("cantidad-dos")
+const infoTaza = document.getElementById("info-taza")
+const btnComprar = document.getElementById("btn-comprar")
 
+//Fetch de API con cotización de monedas extranjeras 
+function calcular(){
 
+  const monUno = monedaUno.value
+  const monDos = monedaDos.value
+
+  fetch(`https://api.exchangerate-api.com/v4/latest/${monUno}`)
+  .then(res => res.json())
+  .then(data => {
+
+    if(monedaUno.addEventListener("change") && monUno==monDos){
+      if(monUno=="ARS"){
+        monedaDos.value="USD"
+      } else{
+        monedaDos="ARS"
+      }
+    }
+
+    if(monedaDos.addEventListener("change") && monUno==monDos){
+      if(monDos=="ARS"){
+        monedaUno.value="USD"
+      } else{
+        monedaUno="ARS"
+      }
+    }
+
+    const taza = data.rates[monDos]
+    infoTaza.innerText = `1 ${monUno} = ${taza} ${monDos}`
+
+    cantidadDos.value = (cantidadUno.value*taza).toFixed(2)
+
+  })
+
+}
+
+//Event listeners
+monedaUno.addEventListener("change",calcular)
+monedaDos.addEventListener("change",calcular)
+cantidadUno.addEventListener("input",calcular)
+cantidadDos.addEventListener("input",calcular)
+
+calcular()

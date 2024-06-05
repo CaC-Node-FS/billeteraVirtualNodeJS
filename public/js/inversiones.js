@@ -107,6 +107,15 @@ function deshabilitarOptionRepetida(monedaSelect1,monedaSelect2){
   
     if(optionToDisable){
       optionToDisable.disabled = true
+
+      if (monedaSelect2.value === optionToDisable.value) {
+        for(let option of monedaSelect2.options){
+          if(!option.disabled){
+            monedaSelect2.value = option.value
+            break
+          }
+        }
+      }
       /*
       if(monedaSelect1.value=="ARS"){
         monedaSelect2.value.selected=="USD"

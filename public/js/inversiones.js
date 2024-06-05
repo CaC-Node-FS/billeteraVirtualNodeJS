@@ -74,9 +74,10 @@ const monedaDos = document.getElementById("moneda-dos")
 const cantidadUno = document.getElementById("cantidad-uno")
 const cantidadDos = document.getElementById("cantidad-dos")
 const infoTaza = document.getElementById("info-taza")
+const btnCambiarSelect = document.getElementById("btn-cambiar-select")
 const btnComprar = document.getElementById("btn-comprar")
 
-//Fetch de API con cotización de monedas extranjeras 
+//Fetch de API con cotización de monedas extranjeras y actualización del DOM 
 function calcular(){
 
   const monUno = monedaUno.value
@@ -85,22 +86,7 @@ function calcular(){
   fetch(`https://api.exchangerate-api.com/v4/latest/${monUno}`)
   .then(res => res.json())
   .then(data => {
-
-    if(monedaUno.addEventListener("change") && monUno==monDos){
-      if(monUno=="ARS"){
-        monedaDos.value="USD"
-      } else{
-        monedaDos="ARS"
-      }
-    }
-
-    if(monedaDos.addEventListener("change") && monUno==monDos){
-      if(monDos=="ARS"){
-        monedaUno.value="USD"
-      } else{
-        monedaUno="ARS"
-      }
-    }
+    deshabilitarOptionRepetida(monedaUno,monedaDos)
 
     const taza = data.rates[monDos]
     infoTaza.innerText = `1 ${monUno} = ${taza} ${monDos}`
@@ -111,10 +97,44 @@ function calcular(){
 
 }
 
+function deshabilitarOptionRepetida(monedaSelect1,monedaSelect2){
+  for (let option of monedaSelect2.options){
+    option.disabled = false
+  }
+
+  if(monedaSelect1.value){
+    const optionToDisable = monedaSelect2.querySelector(`option[value="${monedaSelect1.value}"]`)
+  
+    if(optionToDisable){
+      optionToDisable.disabled = true
+      /*
+      if(monedaSelect1.value=="ARS"){
+        monedaSelect2.value.selected=="USD"
+      } else{
+        monedaSelect2.value.selected=="ARS"
+      }
+*/
+    }
+    
+  }
+
+}
+
 //Event listeners
-monedaUno.addEventListener("change",calcular)
+monedaUno.addEventListener("change",()=>{
+  deshabilitarOptionRepetida(monedaUno,monedaDos)
+  calcular()
+})
 monedaDos.addEventListener("change",calcular)
 cantidadUno.addEventListener("input",calcular)
 cantidadDos.addEventListener("input",calcular)
+
+btnCambiarSelect.addEventListener("click", ()=>{
+  const temp = monedaUno.value
+  monedaUno.value = monedaDos.value
+  monedaDos.value = temp
+  deshabilitarOptionRepetida(monedaUno,monedaDos)
+  calcular()
+})
 
 calcular()

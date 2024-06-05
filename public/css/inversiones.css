@@ -278,7 +278,7 @@ input::-webkit-inner-spin-button {
     font-weight: bold;
 }
 
-#btn-comprar{
+#btn-comprar, #btn-cambiar-select {
     background-color: #d97c2b;
     color: white;
     font-weight: bold;
@@ -286,6 +286,9 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
 }
 
+#btn-cambiar-select{
+    width: 2rem;
+}
 
 
 @media screen and (max-height: 650px) {

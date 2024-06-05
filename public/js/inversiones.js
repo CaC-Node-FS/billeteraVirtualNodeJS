@@ -116,13 +116,7 @@ function deshabilitarOptionRepetida(monedaSelect1,monedaSelect2){
           }
         }
       }
-      /*
-      if(monedaSelect1.value=="ARS"){
-        monedaSelect2.value.selected=="USD"
-      } else{
-        monedaSelect2.value.selected=="ARS"
-      }
-*/
+      
     }
     
   }

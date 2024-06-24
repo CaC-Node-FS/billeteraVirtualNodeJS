@@ -84,35 +84,21 @@
                         <label for="usuario">Su usuario</label>
                         <p class="login-form-validation text-danger m-0" id="login-message-error-user"><img src="../../public/media/login-error-icon.svg" alt="error-icon" width="12px">  Debe introducir su nombre de usuario</p>
                     </div>
+                    
                     <!-- clave input -->
-                    <!-- <div class="input-group mb-3"></div> -->
-                        
-                    
-                        <div class="form-floating login-cell">
-                            <input type="password" id="clave" class="form-control" name="clave" placeholder="Su clave" aria-label="login-eye-icon" maxlength="20" autocomplete="off">
-                            <label for="clave">Su clave</label>
-                            <span><i id="login-eye-icon" class="bi-eye bi-eye-slash"></i></span>
-                        </div>
-                        
-                    
-                      
-                    <!-- </div> -->
-                    <!-- <div class="form-floating login-cell">
-                        <input type="password" id="clave" class="form-control" name="clave" placeholder="Su clave" aria-labelledby="login-eye-icon" maxlength="20" autocomplete="off">
-                        <label for="clave">Su clave </label>
-                        <i id="login-eye-icon" class="bi-eye bi-eye-slash"></i>
-                        <p class="login-form-validation text-danger m-0" id="login-message-error-password"><img src="../../public/media/login-error-icon.svg" alt="error-icon" width="12px">  Su clave debe tener entre 8 y 20 caracteres</p>
-                    </div> -->
+                    <div class="form-floating login-cell">
+                        <input type="password" id="clave" class="form-control" name="clave" placeholder="Su clave" aria-label="login-eye-icon" maxlength="20" autocomplete="off">
+                        <label for="clave">Su clave</label>
+                        <span><i id="login-eye-icon" class="bi-eye bi-eye-slash"></i></span>
+                        <span class="login-form-validation text-danger m-0" id="login-message-error-password"><img src="../../public/media/login-error-icon.svg" alt="error-icon" width="12px">  Su clave debe tener entre 8 y 20 caracteres</span>
+                    </div>
                     
                     <!-- Error de acceso mensaje -->
                     <p class="login-form-validation text-danger m-0" id="login-message-error-access"><img src="../../public/media/login-error-icon.svg" alt="error-icon" width="12px">  El usuario y/o clave ingresados son inválidos</p>            
-                    <!-- <form action="./home.html" method="get" id="login" accept-charset="UTF-8">
-                        <input type="submit" class="btn btn-lg" name="login" value="INICIAR SESIÓN">
-                        <input class="btn btn-lg" name="login" value="INICIAR SESIÓN">
-                        <p id="login-register-label">¿No tiene una cuenta? <a href="./registro.html" id="login-register-link">Regístrese</a> </p>
-                    </form> -->
+                                        
                     <div class="text-center">
-                        <a href="./home.html"><input class="btn btn-lg" name="login" value="INICIAR SESIÓN"></a>
+                        <!-- <a href="./home.html"><input class="btn btn-lg" name="login" value="INICIAR SESIÓN"></a> -->
+                        <a href="#"><input class="btn btn-lg" name="login" type="submit" value="INICIAR SESIÓN"></a>                        
                         <p id="login-register-label">¿No tiene una cuenta? <a href="./registro.html" id="login-register-link">Regístrese</a></p>                        
                     </div>
                 </form>
@@ -125,10 +111,6 @@
     <footer id="footer" class="text-center d-none d-lg-block">
         <p class="naranja">© 2024 Codo a codo homebanking. Todos los derechos reservados. Prohibida la duplicación, distribución o almacenamiento en cualquier medio.</p>
     </footer>
-
-    <!-- <footer id="login-footer" class="text-center">
-        <p>Lorem ipsum dolor sit amet</p>
-    </footer> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../public/js/login.js"></script>

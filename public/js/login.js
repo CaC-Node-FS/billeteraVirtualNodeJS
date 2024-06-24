@@ -1,6 +1,8 @@
-const form = document.getElementById("login");
+const form = document.getElementById("login")
     
-    form.addEventListener("submit", function(event) {      
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault()
 
       const usuario = document.getElementById("usuario")
 
@@ -8,7 +10,7 @@ const form = document.getElementById("login");
 
       if(document.getElementById("usuario").value == "") {
 
-        event.preventDefault()
+        //event.preventDefault()
       
         document.getElementById("login-message-error-user").style.visibility = "visible"
       
@@ -19,7 +21,7 @@ const form = document.getElementById("login");
 
       if(document.getElementById("clave").value.length < 8) {
 
-        event.preventDefault()
+        //event.preventDefault()
       
         document.getElementById("login-message-error-password").style.visibility = "visible"
       
@@ -30,13 +32,40 @@ const form = document.getElementById("login");
       
       if(document.getElementById("usuario").value !== "" && document.getElementById("clave").value.length >= 8) {
       
-        //form.requestSubmit()
-
-        //form.submit()   //No funciona, no sé por qué (HTTP ERROR 405)
-      
         document.getElementById("login-message-error-user").style.visibility = "hidden"
       
         document.getElementById("login-message-error-password").style.visibility = "hidden"
+
+        //form.requestSubmit()
+
+        //form.submit()   //No funciona, no sé por qué (HTTP ERROR 405)
+
+        const formData = new FormData(form)
+
+        console.log('aca')
+       
+        fetch("http://localhost:3000/login", {mode: 'cors'})
+          .then((response) => console.log(response.status))  
+        
+          // .then(response => response.json())
+          // .then(data => {
+          //   console.log(data)
+          // })
+          // .catch(error => {
+          //   console.log('Error:', error)
+          // }) 
+
+        // fetch('https://localhost:3000/login', {
+        //   method: 'POST',
+        //   body: formData,
+        // })
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     console.log(data)
+        //   })
+        //   .catch(error => {
+        //     console.error('Error:', error)
+        //   })
       
       }
 

@@ -152,7 +152,8 @@ ul li a:hover{
 }
 
 #login-message-error-password {
-    display: block !important;
+    position: relative;
+    right: 20px;
     visibility: hidden;
 }
 

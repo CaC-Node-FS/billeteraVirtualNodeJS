@@ -1,0 +1,94 @@
+<header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <div class="w-50 d-flex justify-content-between d-lg-none">
+                <a class="navbar-brand d-lg-none" href="/index">
+                    <i class="bi bi-arrow-left fw-bolder"></i>
+                </a>
+                <img src="/images/media/logo.png" class="img-header" alt="Logo billetera CAC"
+                    class="animate__animated animate__flipInX me-3">
+            </div>
+            <a class="navbar-brand ms-5 d-none d-lg-flex justify-content-center align-items-center" href="/index">
+                <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
+                    class="animate__animated animate__flipInX me-3">
+                <span class="fw-bold ms-3">Codo a codo homebanking</span>
+            </a>
+            <button class="navbar-toggler position-absolute end-0 me-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse me-5" id="navbarText">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registro">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="bi bi-door-open" title="Login"></i></a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/images/call center.png" class="img-fluid" alt="Imagen de contacto">
+        </div>
+        <div class="col-md-6">
+            <h2>Contacto</h2>
+            <p>¡Estamos aquí para ayudarte! Si tienes alguna pregunta o inquietud, no dudes en comunicarte con
+                nosotros al <b>0800-333-BANCO</b>.
+                Nuestro horario de atención es de lunes a viernes, de 8:00 a 20:00 horas. También puedes utilizar el
+                formulario de contacto a continuación o visitarnos en nuestra sucursal más cercana.
+            </p>
+            <form id="contactForm" class="form-container" action="procesar_formulario.php" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                        placeholder="Ingrese su nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                        placeholder="Ingrese su correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escriba aquí su mensaje"
+                        rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Enviar mensaje</button>
+            </form>
+            <div id="confirmacionMsg" class="mensaje-confirmacion">
+                <p>Gracias por tu consulta. Te estaremos respondiendo a la brevedad.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <footer id="contacto-footer"> -->
+<footer id="footer" class="text-center d-none d-lg-block">
+    <p class="naranja">© 2024 Codo a codo homebanking. Todos los derechos reservados. Prohibida la duplicación,
+        distribución o almacenamiento en cualquier medio.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="/javascripts/contacto.js"></script>

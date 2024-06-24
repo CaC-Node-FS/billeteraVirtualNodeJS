@@ -1,0 +1,232 @@
+<header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <div class="w-50 d-flex justify-content-between d-lg-none">
+                <a class="navbar-brand d-lg-none" href="/index">
+                    <i class="bi bi-arrow-left fw-bolder"></i>
+                </a>
+                <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
+                    class="animate__animated animate__flipInX me-3">
+            </div>
+            <a class="navbar-brand ms-5 d-none d-lg-flex justify-content-center align-items-center" href="/index">
+                <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
+                    class="animate__animated animate__flipInX me-3">
+                <span class="fw-bold ms-3">Codo a codo homebanking</span>
+            </a>
+            <button class="navbar-toggler position-absolute end-0 me-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse me-5" id="navbarText">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registro">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="bi bi-door-open" title="Login"></i></a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<main>
+    <section id="seccion-carrusel">
+        <div id="carouselExampleAutoplaying" class="carousel slide d-flex justify-content-center" data-bs-ride="pause">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/tarjetas.webp" class="d-block w-100 h-100" alt="Tarjetas">
+                    <div class="carousel-caption">
+                        <h4>Abrí tu cuenta</h4>
+                        <p class="fw-bold naranja">Solicitá tus tarjetas de débito y crédito 100% bonificadas por un
+                            año.</p>
+                        <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                            data-bs-target="#openAccountModal">Conocer más</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/img-prestamo.jpg" class="d-block w-100 h-100" alt="Préstamos">
+                    <div class="carousel-caption">
+                        <h4>Pagá tus servicios</h4>
+                        <p class="fw-bold naranja">Gestioná todos tus pagos de forma online y olvidate de hacer fila
+                            para pagar tus servicios.</p>
+                        <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                            data-bs-target="#applyLoanModal">Conocer más</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/img-inversiones.jpeg" class="d-block w-100 h-100" alt="Inversiones">
+                    <div class="carousel-caption">
+                        <h4>Hacé crecer tu dinero</h4>
+                        <p class=" fw-bold naranja">Vas a poder invertir un plazo fijo, FCI o compra-venta de divisas.
+                        </p>
+                        <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                            data-bs-target="#investModal">Conocer más</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Modales -->
+    <section>
+
+        <div class="modal fade" id="openAccountModal" tabindex="-1" aria-labelledby="openAccountModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content modal-modificado">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="openAccountModalLabel">Abrí tu Cuenta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ¡Bienvenido a Codo a Codo Homebanking! Abre tu cuenta en pocos minutos y comienza a disfrutar de
+                        nuestros servicios financieros. Solo necesitas completar un breve formulario y verificar tu
+                        identidad. Haz clic en el botón de abajo para empezar.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="window.location.href='/registro'"
+                            class="btn btn-link boton-modal">Abrir Cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="applyLoanModal" tabindex="-1" aria-labelledby="applyLoanModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applyLoanModalLabel">Pagá tus servicios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Con Codo a Codo Homebanking gestioná y pagá todas tus facturas de manera rápida y segura.
+                        Seleccioná el servicio que deseas pagar, ingresá los detalles correspondientes y confirmá tu
+                        pago. Es fácil y conveniente, asegurando que nunca te pierdas un vencimiento.
+                    </div>
+                    <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Solicitar Préstamo</button>
+              </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="investModal" tabindex="-1" aria-labelledby="investModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="investModalLabel">Invierte con Nosotros</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Maximiza tus ahorros invirtiendo con Codo a Codo Homebanking. Explora nuestras opciones de
+                        inversión y elige la que mejor se adapte a tus objetivos financieros. Haz clic en el botón de
+                        abajo para comenzar a invertir.
+                    </div>
+                    <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Comenzar a Invertir</button>
+              </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-acordeon">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        ¿Qué es Codo a codo homebanking?
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Codo a Codo Homebanking es un banco virtual que ofrece servicios
+                        financieros en línea, permitiendo a los usuarios gestionar sus cuentas, realizar transacciones y
+                        acceder a productos financieros desde la comodidad de su hogar.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        ¿Cómo abrir una cuenta?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Para abrir una cuenta, completa el formulario de registro con tus datos
+                        personales y sigue las instrucciones para verificar tu identidad. <a
+                            class="naranja text-decoration-none" href="/registro">Registrate</a></div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        ¿Qué tipos de cuentas ofrece Codo a codo homebanking?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Ofrecemos cuentas corrientes, cuentas de ahorro, y cuentas para
+                        empresas. Cada tipo de cuenta tiene características y beneficios específicos adaptados a
+                        diferentes necesidades financieras.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                        ¿Qué servicios puedo realizar a través de Codo a Codo Homebanking?
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Puedes realizar transferencias nacionales e internacionales, pagar
+                        facturas, gestionar tus inversiones, solicitar préstamos, revisar movimientos de cuenta, y mucho
+                        más.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="footer" class="text-center d-none d-lg-block">
+    <p class="naranja">© 2024 Codo a codo homebanking. Todos los derechos reservados. Prohibida la duplicación,
+        distribución o almacenamiento en cualquier medio.</p>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>

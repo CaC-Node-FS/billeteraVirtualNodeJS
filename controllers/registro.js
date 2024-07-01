@@ -48,13 +48,30 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (!validarFortalezaContrasena(contrasenaInput.value)) {
             contrasenaError.textContent = "La contraseña debe contener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, un número y un símbolo.";
         } else {
+
+            let payload = new FormData(registrationForm)
+                     
+            console.log('payload ',document.getElementById('nombre').value)
+
+            const registerData = {nombre: document.getElementById('nombre').value}
+
+            console.log(registerData)
+
             contrasenaError.textContent = "";
             registrationForm.reset();
-            registroExitosoMsg.style.display = "block";
-            setTimeout(function () {
-                registroExitosoMsg.style.display = "none";
-                window.location.href = "login.html";
-            }, 3000);
+            registroExitosoMsg.style.display = "block";              
+            // setTimeout(function () {
+            //     registroExitosoMsg.style.display = "none";
+            //     window.location.href = "/";
+            // }, 3000);
+          
+
+            fetch("http://localhost:3000/auth/authRegister", {
+                mode: 'cors',
+                method: 'POST',
+                body: JSON.stringify(registerData)
+            })
+            .then((response) => console.log(response.status)) 
         }
     });
 });

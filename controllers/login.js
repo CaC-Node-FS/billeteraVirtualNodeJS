@@ -41,8 +41,7 @@ const form = document.getElementById("login")
         //form.submit()   //No funciona, no sé por qué (HTTP ERROR 405)
 
         const formData = new FormData(form)
-
-        console.log('aca')
+      
        
         fetch("http://localhost:3000/login", {mode: 'cors'})
           .then((response) => console.log(response.status))  

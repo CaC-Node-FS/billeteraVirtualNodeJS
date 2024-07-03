@@ -49,29 +49,34 @@ document.addEventListener("DOMContentLoaded", function () {
             contrasenaError.textContent = "La contraseña debe contener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, un número y un símbolo.";
         } else {
 
-            let payload = new FormData(registrationForm)
-                     
-            console.log('payload ',document.getElementById('nombre').value)
+            //let payload = new FormData(registrationForm)  **No funciona, crea un objeto vacío, no sé por qué.
 
-            const registerData = {nombre: document.getElementById('nombre').value}
+            let registerData = {
+                nombre: document.getElementById('nombre').value,
+                dni: document.getElementById('dni').value,
+                usuario: document.getElementById('usuario').value,
+                email: document.getElementById('email').value,
+                contrasena: document.getElementById('contrasena').value
+            }
 
             console.log(registerData)
 
             contrasenaError.textContent = "";
             registrationForm.reset();
             registroExitosoMsg.style.display = "block";              
-            // setTimeout(function () {
-            //     registroExitosoMsg.style.display = "none";
-            //     window.location.href = "/";
-            // }, 3000);
           
-
             fetch("http://localhost:3000/auth/authRegister", {
+                headers: {                    
+                    "Content-Type": "application/json",
+                },
                 mode: 'cors',
                 method: 'POST',
                 body: JSON.stringify(registerData)
-            })
-            .then((response) => console.log(response.status)) 
+            })            
+            .then((response) => setTimeout(function () {
+                registroExitosoMsg.style.display = "none";
+                window.location.href = "/";
+            }, 1000))
         }
     });
 });

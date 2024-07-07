@@ -1,62 +1,166 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
+const config = require('../config/config')
+let mysql = require('mysql2')
 
-const bcrypt = require('bcryptjs');
+let aliasLista = ["CASA","AVION","NUBE","SOL","AUTO","MESA","FLOR","MAR","TREN","SILLA","LUZ","CIELO","TIERRA","LUNA","PIEDRA","TAZA","LIBRO","CAJA","PUENTE","ARBOL"]
 
-const config = require('../config/config');
-
-let mysql = require('mysql2');
-
-let connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: "localhost",
   user: "admin",
   password: "admin-cac-homebanking",
   database: "CAC_HOMEBANKING"
-});
+})
 
-exports.register = (req, res) => {
+function nuevaCuenta() {
+  let cuenta
+  let cuentaExiste
+  let cuentaOk = false    
+  let sql = "SELECT * FROM cuentas"
+  cuenta = Math.floor(Math.random() * (9999999999 - 1) + 1)
+  connection.query(sql, function (err, lista) {
+    if (err) {
+      throw err
+    } else {
+      cuentaExiste = lista.find((u) => u.cuenta == cuenta)
+    }
+  })
+  if(!cuentaExiste === undefined) {
+    nuevaCuenta()
+  } else {
+    return cuenta
+  }  
+}
 
-  console.log('body ', req.body)
+function nuevoAlias() {
+  let listaRandom = []
+  let alias = ""
+  while(listaRandom.length < 3) {
+    let ind = Math.floor(Math.random()*10)
+    if(!listaRandom.includes(aliasLista[ind])) { 
+        listaRandom.push(aliasLista[ind])
+        alias = alias + aliasLista[ind]
+        if(listaRandom.length < 3) {
+            alias = alias + "."
+        }
+    }
+  }
+  return alias
+}
 
-  let usuarioNuevo = req.body
+function nuevoNtarjeta () {
+  let ntarjeta = ''
+  let num = Math.floor(Math.random() * (9999 - 1000) + 1000)
+  ntarjeta = ntarjeta + num.toString() + ' '
+  num = Math.floor(Math.random() * (9999 - 1000) + 1000)
+  ntarjeta = ntarjeta + num.toString() + ' '
+  num = Math.floor(Math.random() * (9999 - 1000) + 1000)
+  ntarjeta = ntarjeta + num.toString() + ' '
+  num = Math.floor(Math.random() * (9999 - 1000) + 1000)
+  ntarjeta = ntarjeta + num.toString() + ' '
+  return ntarjeta
+}
 
-  usuarioNuevo.dni = parseInt(usuarioNuevo.dni)
+function nuevoCVV () {
+  let cvv = Math.floor(Math.random() * (999 - 100) + 100)
+  return cvv
+}
 
-  usuarioNuevo = Object.values(usuarioNuevo)
+connection.connect()
 
-  const {nombre, dni, usuario, email, contrasena} = req.body
+exports.register = (req, res) => {  
+  
+  let {nombre, dni, usuario, email, direccion, telefono, contrasena} = req.body
 
-  connection.connect(function (err) {
+  dni = parseInt(dni) 
 
-    if (err) throw err;
+  let sql = "SELECT * FROM usuarios"
 
-    console.log("conectado a base de datos")
-
-    let sql = "INSERT INTO usuarios (nombre, dni, usuario, mail, clave) VALUES (?,?,?,?,?)"
-
-    connection.query(sql, [nombre, dni, usuario, email, contrasena], function (err, result) {
-
-      if (err) throw err
-
-      console.log("registro agregado")
-
-      res.end()
-
-    })
-    // Close the MySQL connection
-    connection.end((error) => {
-
-      if (error) {
-
-        console.error('Error closing MySQL connection:', error)
-
-        return
-
+  connection.query(sql, function (err, lista) {
+    if (err) {
+        throw err
+    } else {
+      let dniExiste = lista.find((u) => u.dni == dni)
+      let usuarioExiste = lista.find((u) => u.usuario == usuario)
+      if(dniExiste === undefined && usuarioExiste === undefined)  {
+        const hashedPassword = bcrypt.hashSync(contrasena,8)
+        const token = jwt.sign({id: contrasena}, config.secretKey, {expiresIn: config.tokenExpiresIn})
+        sql = "INSERT INTO usuarios (nombre, dni, usuario, mail, clave) VALUES (?,?,?,?,?)"
+        connection.query(sql, [nombre, dni, usuario, email, hashedPassword], function (err, result) {
+          if (err) {
+            throw err
+          } else {
+            sql = "SELECT id FROM usuarios WHERE dni=?"
+            connection.query(sql, [dni], function (err, result) {
+              if (err) {
+                throw err
+              } else {
+                let cuenta_usuario = result[0].id
+                let cuenta = nuevaCuenta()
+                let cbu = cuenta*10 + 10000000000001
+                let saldo = 10000000.00
+                let alias = nuevoAlias()
+                sql = "INSERT INTO cuentas (cbu, cuenta, alias, saldo, cuenta_usuario) VALUES (?,?,?,?,?)"
+                connection.query(sql, [cbu, cuenta, alias, saldo, cuenta_usuario], function (err, result) {
+                  if (err) {
+                    throw err
+                  } else {
+                    let titular = nombre
+                    let fecha = new Date()
+                    fecha.setFullYear(fecha.getFullYear() + 2)
+                    let fecha_vencimiento = fecha.getFullYear() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getDate()
+                    tarjeta_numero = nuevoNtarjeta()
+                    let cvv = nuevoCVV()
+                    let tarjeta_cuenta = cuenta
+                    sql = "INSERT INTO tarjetas (titular, fecha_vencimiento, tarjeta_numero, cvv, tarjeta_cuenta) VALUES (?,?,?,?,?)"
+                    connection.query(sql, [titular, fecha_vencimiento, tarjeta_numero, cvv, tarjeta_cuenta], function (err, result) {
+                      if (err) throw err
+                    })
+                  }
+                })
+              }
+            })
+          }
+        })              
+        res.status(201).send({auth: true, token})        
+      } else {
+        res.status(200).send({auth: false})
       }
-
-      console.log('MySQL connection closed.')
-
-    })    
+    }
 
   })
 
+}
+
+exports.login = (req, res) => {
+
+  let {usuario, clave} = req.body
+
+  let sql = "SELECT * FROM usuarios"
+  connection.query(sql, function (err, lista) {
+    if (err) {
+      throw err
+    } else {
+      let usuarioExiste = lista.find((u) => u.usuario == usuario)
+      if(usuarioExiste === undefined)  {
+        res.status(404).send('User not found')
+      } else {        
+        sql = "SELECT clave FROM usuarios WHERE usuario=?"
+        connection.query(sql, [usuarioExiste.usuario], function (err, result) {
+          if (err) {
+            throw err
+          } else {
+            let claveOk = bcrypt.compareSync(clave, result[0].clave)
+            if(!claveOk) {
+              res.status(401).send ({auth: false, token: null})
+            } else {
+              const token = jwt.sign({id: clave}, config.secretKey, {expiresIn: config.tokenExpiresIn})
+              // res.redirect('/home')
+              res.status(200).send({auth: true, token})
+            }
+          }
+        })
+      }
+    }
+  })
 }

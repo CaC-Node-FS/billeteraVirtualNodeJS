@@ -1,4 +1,4 @@
 module.exports = {
-    secretKey: 'clave',
+    secretKey: 'cac-homebanking',
     tokenExpiresIn: '10m'
 }

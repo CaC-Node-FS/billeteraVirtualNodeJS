@@ -79,11 +79,11 @@ ul li a:hover{
 }
 
 #login-register-link {
-    color: #d97c2b;
+    color: #d97c2b !important;
 }
 
 #login-register-link:hover {
-    color: #BF2604;
+    color: #BF2604 !important;
 }
 
 #login-register-link:active {

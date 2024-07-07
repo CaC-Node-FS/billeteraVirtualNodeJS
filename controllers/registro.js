@@ -1,9 +1,12 @@
+const registroExito = '<div><img src="images/b.png" width="35"><p>¡Registro exitoso!</p><button id="registro-button">CERRAR</button></div>'
+const registroError = '<div><img src="images/a.png" width="35"><p>El usuario ya existe</p><button id="registro-button">CERRAR</button></div>'
+
 document.addEventListener("DOMContentLoaded", function () {
     const registrationForm = document.getElementById("registrationForm");
     const contrasenaInput = document.getElementById("contrasena");
     const confirmarContrasenaInput = document.getElementById("confirmar_contrasena");
     const contrasenaError = document.getElementById("contrasenaError");
-    const registroExitosoMsg = document.getElementById("registroExitoso");
+    const registroExitosoMsg = document.getElementById("registroExitoso");        
 
     // mostrar u ocultar la contraseña
     function togglePasswordVisibility(input) {
@@ -51,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             //let payload = new FormData(registrationForm)  **No funciona, crea un objeto vacío, no sé por qué.
 
+            document.getElementById("registroForm-button").disabled = true;
+
             let registerData = {
                 nombre: document.getElementById('nombre').value,
                 dni: document.getElementById('dni').value,
@@ -59,11 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 contrasena: document.getElementById('contrasena').value
             }
 
-            console.log(registerData)
-
             contrasenaError.textContent = "";
             registrationForm.reset();
-            registroExitosoMsg.style.display = "block";              
+            //registroExitosoMsg.style.display = "block";
           
             fetch("http://localhost:3000/auth/authRegister", {
                 headers: {                    
@@ -72,11 +75,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 mode: 'cors',
                 method: 'POST',
                 body: JSON.stringify(registerData)
-            })            
-            .then((response) => setTimeout(function () {
-                registroExitosoMsg.style.display = "none";
-                window.location.href = "/";
-            }, 1000))
+            })
+            .then((response) => response.json())
+            .then((obj) => {
+                const dialog = document.createElement("dialog")
+                dialog.setAttribute("id", "popup")
+                dialog.setAttribute("open", "true")
+                if(!obj.auth) {
+                    dialog.innerHTML = registroError
+                } else {
+                    dialog.innerHTML = registroExito
+                }
+                document.body.appendChild(dialog)
+                document.getElementById("registro-button").addEventListener('click', () => {      
+                    document.body.removeChild(dialog)
+                    document.getElementById("registroForm-button").disabled = false;
+                })
+                // setTimeout(function () {
+                //     registroExitosoMsg.style.display = "none";
+                //     window.location.href = "/login";
+                // }, 5000)
+            })
+
         }
+
     });
 });

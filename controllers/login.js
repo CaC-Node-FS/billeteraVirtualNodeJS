@@ -1,6 +1,6 @@
-const form = document.getElementById("login")
+const loginForm = document.getElementById("login")
     
-    form.addEventListener("submit", function(event) {
+    loginForm.addEventListener("submit", function(event) {
 
       event.preventDefault()
 
@@ -9,8 +9,6 @@ const form = document.getElementById("login")
       const clave = document.getElementById("clave")
 
       if(document.getElementById("usuario").value == "") {
-
-        //event.preventDefault()
       
         document.getElementById("login-message-error-user").style.visibility = "visible"
       
@@ -20,8 +18,6 @@ const form = document.getElementById("login")
       }
 
       if(document.getElementById("clave").value.length < 8) {
-
-        //event.preventDefault()
       
         document.getElementById("login-message-error-password").style.visibility = "visible"
       
@@ -36,41 +32,40 @@ const form = document.getElementById("login")
       
         document.getElementById("login-message-error-password").style.visibility = "hidden"
 
-        //form.requestSubmit()
+        let loginData = {
+          usuario: document.getElementById('usuario').value,
+          clave: document.getElementById('clave').value,
+        }
 
-        //form.submit()   //No funciona, no sé por qué (HTTP ERROR 405)
-
-        const formData = new FormData(form)
-      
+        loginForm.reset()
        
-        fetch("http://localhost:3000/login", {mode: 'cors'})
-          .then((response) => console.log(response.status))  
-        
-          // .then(response => response.json())
-          // .then(data => {
-          //   console.log(data)
-          // })
-          // .catch(error => {
-          //   console.log('Error:', error)
-          // }) 
+        fetch("http://localhost:3000/auth/authLogin", {
+          headers: {                    
+            "Content-Type": "application/json",
+          },
+          mode: 'cors',
+          method: 'POST',
+          body: JSON.stringify(loginData)
+        })
+        .then((response) => response.json())
+        .then((obj) => {
+          console.log('A ',obj.token)
+          fetch("http://localhost:3000/auth/home", {
+            headers: {                    
+              "authorization": "Bearer " +  obj.token,
+            },
+            mode: 'cors',
+          })
+          // .then((response) => response.json())
+          .then((obj) => {
+            console.log('B ',obj)
+          })
 
-        // fetch('https://localhost:3000/login', {
-        //   method: 'POST',
-        //   body: formData,
-        // })
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     console.log(data)
-        //   })
-        //   .catch(error => {
-        //     console.error('Error:', error)
-        //   })
+        })
       
       }
-
-      form.reset()
     
-    });
+    })
 
     const passwordIcon = document.getElementById("login-eye-icon");
     

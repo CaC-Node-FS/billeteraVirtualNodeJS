@@ -6,11 +6,11 @@
                 <a class="navbar-brand d-lg-none" href="/home">
                   <i class="bi bi-arrow-left fw-bolder"></i>
                 </a>
-                <img src="/images/media/logo.png" class="img-header" alt="Logo billetera CAC"
+                <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
                   class="animate__animated animate__flipInX me-3">
               </div>
               <a class="navbar-brand ms-5 d-none d-lg-flex justify-content-center align-items-center" href="/home">
-                <img src="/images/media/logo.png" class="img-header" alt="Logo billetera CAC"
+                <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
                   class="animate__animated animate__flipInX me-3">
                 <span class="fw-bold ms-3">Codo a codo homebanking</span>
               </a>
@@ -56,30 +56,29 @@
 
     <main>
 
-        <!-- <h5 id="text-bienvenida">Hola, <span>María Rosa</span></h5> -->
-        <h5></h5>
+        <h5 id="text-bienvenida">Hola, <span>{{titular}}</span></h5>
 
         <div id="vista">
 
             <article id="info">
 
                 <section id="cuenta_datos">
-                    <p>CA $ 123 456789/0 </p>
-                    <p>$<span id="saldo">1.000.000,00</span><i id="home-eye-icon" class="bi-eye bi-eye-slash"
+                    <p>CA $ {{cuenta}} </p>
+                    <p>$<span id="saldo">{{saldo}}</span><i id="home-eye-icon" class="bi-eye bi-eye-slash"
                             onclick="verSaldo()"></i></p>
-                    <p id="CBU">CBU: {CBU}</p><img src="/images/media/copy-icon.png"
+                    <p id="CBU">CBU: {{CBU}}</p><img src="/images/copy-icon.png"
                         id="home-copy-CBU" onclick="copiarCBU()"><p id="CBU-copiado">CBU copiado</p>
                 </section>
 
                 <section id="cuenta_tarjeta">
                     <figure>
-                        <p><img src="/images/media/logo.png" id="logo_tarjeta"> <span
-                                id="numero_tarjeta">123456789011</span>1234</p>
+                        <p><img src="/images/logo.png" id="logo_tarjeta"> <span
+                                id="numero_tarjeta">{{tarjeta_numero}}</span></p>
                         <figcaption>Débito</figcaption>
                     </figure>
-                    <p>{titular}/p>
-                    <p>{fecha_vencimiento}</p>
-                    <p>{cuenta}</p>
+                    <p>Titular: {{titular}}</p>
+                    <p>Fecha de vencimiento {{fecha_vencimiento}}</p>
+                    <p>Cuenta asociada: {{cuenta}}</p>
                 </section>
 
                 <section id="cuenta_movimientos">
@@ -128,55 +127,7 @@
                                                 <th class="importe">Importe</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="fecha">15/04</td>
-                                                <td class="tipo">Crédito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">&nbsp$1.111,11</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fecha">16/04</td>
-                                                <td class="tipo">Débito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">-$1.111,11</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fecha">15/04</td>
-                                                <td class="tipo">Crédito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">&nbsp$1.111,11</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fecha">16/04</td>
-                                                <td class="tipo">Débito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">-$1.111,11</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fecha">15/04</td>
-                                                <td class="tipo">Crédito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">&nbsp$1.111,11</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fecha">16/04</td>
-                                                <td class="tipo">Débito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">-$1.111,11</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fecha">15/04</td>
-                                                <td class="tipo">Crédito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">&nbsp$1.111,11</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="fecha">16/04</td>
-                                                <td class="tipo">Débito</td>
-                                                <td class="concepto">Lorem ipsum dolor sit amet</td>
-                                                <td class="importe">-$1.111,11</td>
-                                            </tr>
+                                        <tbody>                                            
                                         </tbody>
                                     </table>
                                 </div>

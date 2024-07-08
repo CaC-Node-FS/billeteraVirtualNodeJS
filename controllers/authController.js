@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const config = require('../config/config')
-let mysql = require('mysql2')
+const mysql = require('mysql2')
 
 let aliasLista = ["CASA","AVION","NUBE","SOL","AUTO","MESA","FLOR","MAR","TREN","SILLA","LUZ","CIELO","TIERRA","LUNA","PIEDRA","TAZA","LIBRO","CAJA","PUENTE","ARBOL"]
 
@@ -133,30 +133,33 @@ exports.register = (req, res) => {
 }
 
 exports.login = (req, res) => {
-
   let {usuario, clave} = req.body
-
+  let usuarioExiste
+  let cuenta = {}
+  let tarjeta = {}
   let sql = "SELECT * FROM usuarios"
   connection.query(sql, function (err, lista) {
     if (err) {
       throw err
     } else {
-      let usuarioExiste = lista.find((u) => u.usuario == usuario)
+      usuarioExiste = lista.find((u) => u.usuario == usuario)
       if(usuarioExiste === undefined)  {
-        res.status(404).send('User not found')
-      } else {        
-        sql = "SELECT clave FROM usuarios WHERE usuario=?"
+        res.status(404).json({auth: false, error: 'usuario inexistente'})
+      } else {
+        sql = "SELECT * FROM usuarios WHERE usuario=?"
         connection.query(sql, [usuarioExiste.usuario], function (err, result) {
           if (err) {
             throw err
           } else {
             let claveOk = bcrypt.compareSync(clave, result[0].clave)
             if(!claveOk) {
-              res.status(401).send ({auth: false, token: null})
+              res.status(401).json({auth: false, token: null})
             } else {
               const token = jwt.sign({id: clave}, config.secretKey, {expiresIn: config.tokenExpiresIn})
-              // res.redirect('/home')
-              res.status(200).send({auth: true, token})
+              res.cookie('jwt', token, {httpOnly: true, maxAge: 5000})
+              res.cookie('usuario', usuarioExiste.nombre, {httpOnly: true, maxAge: 5000})
+              res.cookie('cuenta_usuario', usuarioExiste.id, {httpOnly: true, maxAge: 5000})
+              res.status(200).json({usuario: usuarioExiste.nombre})
             }
           }
         })

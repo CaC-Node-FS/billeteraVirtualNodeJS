@@ -152,8 +152,7 @@ main {
 }
 
 #numero_tarjeta {
-    word-spacing: 20px;
-    -webkit-text-security: disc;
+    word-spacing: 5px;
 }
 
 #cuenta_movimientos {

@@ -10,6 +10,10 @@ var contactoRouter = require('./routes/contacto');
 var loginRouter = require('./routes/login');
 var authRouter = require('./routes/authRoutes');
 var homeRouter = require('./routes/home');
+var inversionesRouter = require('./routes/inversiones');
+var pagosRouter = require('./routes/pagos');
+var perfilRouter = require('./routes/perfil');
+var transferenciasRouter = require('./routes/transferencias');
 
 var app = express();
 
@@ -24,6 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'controllers')));
 
+app.use(cookieParser())
+
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/registro', registroRouter);
@@ -31,6 +37,10 @@ app.use('/contacto', contactoRouter);
 app.use('/login', loginRouter);
 app.use('/auth', authRouter);
 app.use('/home', homeRouter);
+app.use('/inversiones', inversionesRouter);
+app.use('/pagos', pagosRouter);
+app.use('/perfil', perfilRouter);
+app.use('/transferencias', transferenciasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

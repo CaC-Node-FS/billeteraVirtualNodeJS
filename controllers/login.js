@@ -1,6 +1,6 @@
 const loginForm = document.getElementById("login")
     
-    loginForm.addEventListener("submit", function(event) {
+    loginForm.addEventListener("submit", async function(event) {
 
       event.preventDefault()
 
@@ -38,31 +38,30 @@ const loginForm = document.getElementById("login")
         }
 
         loginForm.reset()
-       
-        fetch("http://localhost:3000/auth/authLogin", {
-          headers: {                    
-            "Content-Type": "application/json",
-          },
-          mode: 'cors',
-          method: 'POST',
-          body: JSON.stringify(loginData)
-        })
-        .then((response) => response.json())
-        .then((obj) => {
-          console.log('A ',obj.token)
-          fetch("http://localhost:3000/auth/home", {
+         
+        try {
+          const res = await fetch ("http://localhost:3000/auth/authLogin", {
             headers: {                    
-              "authorization": "Bearer " +  obj.token,
+              "Content-Type": "application/json",
             },
             mode: 'cors',
+            method: 'POST',
+            body: JSON.stringify(loginData)
           })
-          // .then((response) => response.json())
-          .then((obj) => {
-            console.log('B ',obj)
-          })
+          const data = await res.json()
+          console.log('data ',data)
+          if(data.usuario){
+          // if(Object.keys(data).lengt > 0) {
+            document.getElementById('login-message-error-access').style.visibility = 'hidden'
+            location.assign('/home')
+          } else {
+            document.getElementById('login-message-error-access').style.visibility = 'visible'
+          }
+        }
+        catch (err) {
+          console.log(err)          
+        }
 
-        })
-      
       }
     
     })

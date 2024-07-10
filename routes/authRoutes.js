@@ -10,9 +10,14 @@ router.post('/authRegister', authController.register)
 
 router.post('/authLogin', authController.login)
 
-router.get('/home', authMiddleware, (req, res) => {
-    //res.status(200).send("Hola usuario " + req.userId)
-    next()
-})
+router.get('/home', authMiddleware)
+
+router.get('/inversiones', authMiddleware)
+
+router.get('/pagos', authMiddleware)
+
+router.get('/perfil', authMiddleware)
+
+router.get('/transferencias', authMiddleware)
 
 module.exports = router

@@ -4,46 +4,50 @@
     box-sizing: border-box;
 }
 /*//////////////////////////////////////////////////////////////*/
-html, body {
+html {
     height: 100%;
 }
 
-.img-header{
+#body-pagos {
+    height: 100%;
+}
+
+#body-pagos .img-header{
     width: 4rem;
 }
 
-.navbar-brand {
+#body-pagos .navbar-brand {
     font-size: 1em !important;
 }
 
-ul li a:hover{
+#body-pagos ul li a:hover{
     color: #d97c2b !important;
     font-weight: bold;
 }
 
-#vista {
+#body-pagos #vista-pagos {
     height: calc(100vh - 120px);
 }
 
-main {
+#body-pagos #main-pagos {
     display: grid;
     width: 100%;
     grid-template-columns: 100%;
     grid-template-areas: "info";
 }
 
-.accordion {
+#body-pagos .accordion {
     --bs-accordion-border-radius: 30px !important;
     --bs-accordion-inner-border-radius: 30px !important;
 }
 
-#pagos-menu {
+#body-pagos #pagos-menu {
     grid-area: pagos-menu;
     width: 100%;
     padding: 10px;
 }
 
-#info {
+#body-pagos #info-pagos {
     height: 100%;
     display: grid;
     grid-template-columns: 5% 90% 5%;
@@ -53,26 +57,26 @@ main {
                          ". pagos-menu .";
 }
 
-#pagos-menu .nav-link {
+#body-pagos #pagos-menu .nav-link {
     margin: 2px;
     background-color: #d97c2b;
     opacity: 1;
     color: white;
 }
 
-#pagos-menu .nav-link:hover {
+#body-pagos #pagos-menu .nav-link:hover {
     background-color: #f23005;
     opacity: 0.8;
     color: white;
 }
 
-#pagos-menu .nav-link.active {
+#body-pagos #pagos-menu .nav-link.active {
     background-color: #f23005 !important;
     opacity: 1;
     color: white;
 }
 
-input::-webkit-inner-spin-button {
+#body-pagos input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -81,16 +85,16 @@ input::-webkit-inner-spin-button {
     -moz-appearance: textfield;
 } */
 
-#pagos-menu .form-select, #pagos-menu input {
+#body-pagos #pagos-menu .form-select, #body-pagos #pagos-menu input {
     box-shadow: 2px 2px #d97c2b;
 }
 
-#pagos-menu .form-select:focus, #pagos-menu input:focus {
+#body-pagos #pagos-menu .form-select:focus, #body-pagos #pagos-menu input:focus {
     box-shadow: none;
     border: 1px solid #f23005 ;
 }
 
-#servicio-confirmar-button, #servicio-cancelar-button {
+#body-pagos #servicio-confirmar-button, #body-pagos #servicio-cancelar-button {
     width: 100px;
     height: 30px;
     margin-top: 10px;
@@ -100,28 +104,28 @@ input::-webkit-inner-spin-button {
     color: white;
 }
 
-#servicio-confirmar-button:focus, #servicio-cancelar-button:focus {
+#body-pagos #servicio-confirmar-button:focus, #body-pagos #servicio-cancelar-button:focus {
     background-color: #f23005;
 }
 
-#servicio-confirmar-button:active, #servicio-cancelar-button:active {
+#body-pagos #servicio-confirmar-button:active, #body-pagos #servicio-cancelar-button:active {
     background-color: #f23005;
     transform: scale(1.2);
 }
 
-#pagos-menu .accordion-item {
+#body-pagos #pagos-menu .accordion-item {
     min-width: 300px;    
 }
 
-#pagos-menu .accordion-button:not(collapsed) {
+#body-pagos #pagos-menu .accordion-button:not(collapsed) {
     background-color: #d97c2b;
 }
 
-#nuevo-servicio-form {
+#body-pagos #nuevo-servicio-form {
     visibility: hidden;
 }
 
-#pagos-menu  #nuevoServicio-button {
+#body-pagos #pagos-menu  #nuevoServicio-button {
     width: 200px !important;
     margin-top: 10px;
     box-shadow: none;
@@ -131,68 +135,68 @@ input::-webkit-inner-spin-button {
     font-size: 1em;
 }
 
-#pagos-menu button:hover {
+#body-pagos #pagos-menu button:hover {
     border:none;
     background-color:#f23005;
     color: white;
 }
 
-#pagos-menu  #nuevoServicio-button:active {
+#body-pagos #pagos-menu  #nuevoServicio-button:active {
     border:none;
     background-color:#f23005 !important;
     color: white !important;
     transform: scale(1.2);
 }
-#pagos-menu #nuevoServicio input {
+#body-pagos #pagos-menu #nuevoServicio input {
     box-shadow: none;
 }
 
-#pagos-menu .accordion-button {
+#body-pagos #pagos-menu .accordion-button {
     color: white;
 }
 
-#pagos-menu .accordion-button:focus {
+#body-pagos #pagos-menu .accordion-button:focus {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
     color: white;
 }
 
-#pagos-menu .accordion-button:not(collapsed) {
+#body-pagos #pagos-menu .accordion-button:not(collapsed) {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
     color: white;
 }
 
-#pagos-menu nav button {
+#body-pagos #pagos-menu nav button {
     border-radius: 30px;
 }
 
-.bi, .bi-trash3 {
+#body-pagos .bi, #body-pagos .bi-trash3 {
     /* display: block !important; */
     font-size: 1.5em !important;
     cursor: pointer;
     color: #d97c2b;
 }
 
-.bi:hover, .bi-trash3:hover {
+#body-pagos .bi:hover, #body-pagos .bi-trash3:hover {
     color: #f23005;
 }
 
-.bi:active, .bi-trash3:active {
+#body-pagos .bi:active, #body-pagos .bi-trash3:active {
     color: #f23005;
     scale: 1.2 !important;
 }
 
-.col-boleta-servicio, .col-boleta-pagar {
+#body-pagos .col-boleta-servicio, #body-pagos .col-boleta-pagar {
     cursor: pointer;
    
 }
 
-.col-boleta-servicio:active, .col-boleta-pagar:active {
+#body-pagos .col-boleta-servicio:active, #body-pagos .col-boleta-pagar:active {
     transform: scale(1.2);
 }
 
-#serviciosAdheridos-table, #historialPagos-table, #agendaPagos-table {
+#body-pagos #serviciosAdheridos-table, #body-pagos #historialPagos-table, #body-pagos #agendaPagos-table {
     font-size: 0.8em;
     /* display: flex; */
     /* flex-flow: column; */
@@ -206,7 +210,7 @@ input::-webkit-inner-spin-button {
     font-family: "Graduate", serif;
 }
 
-#serviciosAdheridos-table tr, #historialPagos-table tr, #agendaPagos-table tr {
+#body-pagos #serviciosAdheridos-table tr, #body-pagos #historialPagos-table tr, #body-pagos #agendaPagos-table tr {
     text-align: left;
     height: 50px;
     /* display: table; */
@@ -214,35 +218,35 @@ input::-webkit-inner-spin-button {
 }
  
 
-table th:nth-child(1) {
+#body-pagos table th:nth-child(1) {
     width: 40%;    
 }
 
-table th:nth-child(2) {
+#body-pagos table th:nth-child(2) {
     width: 30%;
 }
 
-table th:nth-child(3) {
+#body-pagos table th:nth-child(3) {
     width: 20%;
 }
 
-table th:nth-child(4) {
+#body-pagos table th:nth-child(4) {
     width: 10%;
 } 
 
-#serviciosAdheridos-table td, #historialPagos-table td, #agendaPagos-table td {
+#body-pagos #serviciosAdheridos-table td, #body-pagos #historialPagos-table td, #body-pagos #agendaPagos-table td {
     font-family: "Graduate", serif;
 }
 
-#serviciosAdheridos-table tr:nth-child(even), #historialPagos-table tr:nth-child(even), #agendaPagos-table tr:nth-child(even) {
+#body-pagos #serviciosAdheridos-table tr:nth-child(even), #body-pagos #historialPagos-table tr:nth-child(even), #body-pagos #agendaPagos-table tr:nth-child(even) {
     background-color:  lightgray !important
 }
 
-#serviciosAdheridos-table tr:nth-child(odd), #historialPagos-table tr:nth-child(odd), #agendaPagos-table tr:nth-child(odd) {
+#body-pagos #serviciosAdheridos-table tr:nth-child(odd), #body-pagos #historialPagos-table tr:nth-child(odd), #body-pagos #agendaPagos-table tr:nth-child(odd) {
     background-color: rgba(255,255,255,0.8) !important;
 }
 
-#serviciosAdheridos-table thead tr:first-child, #historialPagos-table thead tr:first-child, #agendaPagos-table thead tr:first-child {
+#body-pagos #serviciosAdheridos-table thead tr:first-child, #body-pagos #historialPagos-table thead tr:first-child, #body-pagos #agendaPagos-table thead tr:first-child {
     background-color: #d97c2b !important;    
 }
 /*   
@@ -251,7 +255,7 @@ table th:nth-child(4) {
     overflow-y: auto;
 } */
 
-#nuevoServicio-confirmar, #nuevoServicio-cancelar {
+#body-pagos #nuevoServicio-confirmar, #body-pagos #nuevoServicio-cancelar {
     width: 100px;
     height: 30px;
     margin-right: 10px;
@@ -267,7 +271,7 @@ table th:nth-child(4) {
     font-size: 0.8em;
 } */
 
-#popupServicio {
+#body-pagos #popupServicio {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -283,7 +287,7 @@ table th:nth-child(4) {
     text-align: center;
 }
 
-#popupServicio p {
+#body-pagos #popupServicio p {
     margin-top: 20px;
     padding-left: 5px;
     padding-right: 5px;
@@ -296,7 +300,7 @@ table th:nth-child(4) {
     padding-left: 5px;
 } */
 
-#popupServicio button {
+#body-pagos #popupServicio button {
     margin-left: 5px;
     margin-right: 5px;
     background-color: #d97c2b;
@@ -308,15 +312,15 @@ table th:nth-child(4) {
     font-size: 0.7em;
 }
 
-.bi-download {
+#body-pagos .bi-download {
     margin-top: 30px;
 }
 
-.bi-x-lg {
+#body-pagos .bi-x-lg {
     font-size: 0.8em !important;
 }
 
-#popupBoleta {
+#body-pagos #popupBoleta {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -332,7 +336,7 @@ table th:nth-child(4) {
     text-align: center;
 }
 
-#popupBoleta p {
+#body-pagos #popupBoleta p {
     margin-top: 2px;
     margin-bottom: 2px;
     padding-left: 15px;
@@ -342,7 +346,7 @@ table th:nth-child(4) {
     text-align: start;
 }
 
-#popupBoleta h6 {
+#body-pagos #popupBoleta h6 {
     background-color: lightgray;
     padding-left: 5px;
 }
@@ -353,55 +357,55 @@ table th:nth-child(4) {
     margin-bottom: 20px;
 } */
 
-#boleta-logo-texto {
+#body-pagos #boleta-logo-texto {
     text-align: start;
     margin-right: 50px;
     font-family: Arial, Helvetica, sans-serif;
     
 }
 
-#mas-icon {
+#body-pagos #mas-icon {
     width: 1.2em;
 }
 
-#mas-servicio-button {
+#body-pagos #mas-servicio-button {
     background-color: transparent;
     border: none;
 }
 
-#mas-servicio-button:hover {
+#body-pagos #mas-servicio-button:hover {
     background-color: transparent !important;
 }
 
-#mas-servicio-button:active {
+#body-pagos #mas-servicio-button:active {
     transform: scale(1.2);
     background-color: transparent; 
 }
 
-.accordion-body section p, .accordion-body section label {
+#body-pagos .accordion-body section p, #body-pagos .accordion-body section label {
     margin: 0;  
 }
 
-.accordion-body figcaption {
+#body-pagos .accordion-body figcaption {
     font-size: 1.5em;
     font-weight: 600;
 }
 
 @media screen and (max-height: 650px) {
-    #body {
+    #body-pagos {
         height: 650px;
         overflow-y: scroll;
     }
 }
 
 @media screen and (max-width: 576px) {
-    table td, table th {
+    #body-pagos table td, #body-pagos table th {
         font-size: 0.7em !important;
     }
 }
 
 @media screen and (max-width: 476px) {
-    #info {
+    #body-pagos #info {
         height: 100%;
         display: grid;
         grid-template-columns: 100%;
@@ -410,10 +414,10 @@ table th:nth-child(4) {
         grid-template-areas: "."
                              "pagos-menu";
     }
-    table td, table th {
+    #body-pagos table td, #body-pagos table th {
         font-size: 0.6em !important;
     }
-    .servicio-pagar-icon, .servicio-boleta-icon {
+    #body-pagos .servicio-pagar-icon, #body-pagos .servicio-boleta-icon {
         width: 16px !important;
     }
 }

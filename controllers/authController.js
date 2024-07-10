@@ -85,8 +85,8 @@ exports.register = (req, res) => {
       if(dniExiste === undefined && usuarioExiste === undefined)  {
         const hashedPassword = bcrypt.hashSync(contrasena,8)
         const token = jwt.sign({id: contrasena}, config.secretKey, {expiresIn: config.tokenExpiresIn})
-        sql = "INSERT INTO usuarios (nombre, dni, usuario, mail, clave) VALUES (?,?,?,?,?)"
-        connection.query(sql, [nombre, dni, usuario, email, hashedPassword], function (err, result) {
+        sql = "INSERT INTO usuarios (nombre, dni, usuario, mail,direccion, telefono, clave) VALUES (?,?,?,?,?,?,?)"
+        connection.query(sql, [nombre, dni, usuario, email, direccion, telefono, hashedPassword], function (err, result) {
           if (err) {
             throw err
           } else {
@@ -155,10 +155,12 @@ exports.login = (req, res) => {
             if(!claveOk) {
               res.status(401).json({auth: false, token: null})
             } else {
+              let timeExpire = 10*60*1000
               const token = jwt.sign({id: clave}, config.secretKey, {expiresIn: config.tokenExpiresIn})
-              res.cookie('jwt', token, {httpOnly: true, maxAge: 5000})
-              res.cookie('usuario', usuarioExiste.nombre, {httpOnly: true, maxAge: 5000})
-              res.cookie('cuenta_usuario', usuarioExiste.id, {httpOnly: true, maxAge: 5000})
+              res.cookie('jwt', token, {httpOnly: true, maxAge: timeExpire})
+              res.cookie('usuario', usuarioExiste.usuario, {httpOnly: true, maxAge: timeExpire})
+              res.cookie('usuario_id', usuarioExiste.id, {httpOnly: true, maxAge: timeExpire})
+              res.cookie('usuario_nombre', usuarioExiste.nombre, {httpOnly: true, maxAge: timeExpire})
               res.status(200).json({usuario: usuarioExiste.nombre})
             }
           }

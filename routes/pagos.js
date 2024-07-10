@@ -3,7 +3,15 @@ var router = express.Router();
 
 /* GET pagos page. */
 router.get('/', function(req, res, next) {
-  res.render('pagos');
-});
+  let jwt = req.cookies.jwt 
+  let usuario = req.cookies.usuario
+  let usuario_id = req.cookies.usuario_id
+  let usuario_nombre = req.cookies.usuario_nombre
+  if(jwt == undefined || usuario == undefined || usuario_id == undefined || usuario_nombre == undefined) {
+    res.redirect('/')
+  } else {
+    res.render('pagos')
+  }
+})
 
 module.exports = router;

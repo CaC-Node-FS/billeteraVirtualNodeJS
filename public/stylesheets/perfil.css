@@ -4,44 +4,48 @@
     box-sizing: border-box;
 }
 
-body{
+#body-perfil{
     min-width: 360px;
     min-height:100vh;
 }
 
-#perfil-vista a {
+#body-perfil #perfil-vista a {
     color:white !important;
 }
 
-#perfil-vista ul li a:hover{
+#body-perfil #perfil-vista ul li a:hover{
     color: #d97c2b !important;
     font-weight: bold;
 }
 
-.img-header{
+#body-perfil .img-header{
     width: 3rem;
 }
 
-.navbar-brand {
+#body-perfil .navbar-brand {
     font-size: 1.3em !important;
 }
 
-#img-perfil{
+#body-perfil #img-perfil{
     width:6rem;
     filter: grayscale(100%);
 }
 
-.datos-usuario{
-    width:80%;
+#body-perfil .datos-usuario{
+    width:100%;
 }
 
-.datos-usuario ul li .btn-link{
+#body-perfil span {
+    font-size: 0.85em;
+}
+
+#body-perfil .datos-usuario ul li .btn-link{
     text-decoration: none;
     color: white;
     background-color: #d97c2b;
 }
 
-.datos-usuario ul li .btn-link:hover{
+#body-perfil .datos-usuario ul li .btn-link:hover{
     text-decoration: none;
     color: #d97c2b;
     background-color:white;
@@ -70,13 +74,13 @@ body{
 
 @media (max-width:539px) {
 
-    #perfil-vista{ 
+    #body-perfil #perfil-vista{ 
         max-width: 100%;
     }    
 }
 
 @media (min-width:540px) {
-    #perfil-vista{ 
+    #body-perfil #perfil-vista{ 
         max-width:80%;
     }    
 }

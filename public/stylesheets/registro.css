@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 
-body {
+#body-registro {
     font-family: Arial, sans-serif;
     background-color: #ffff;
 }
 
-.container {
+#body-registro .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -17,24 +17,24 @@ body {
     margin-bottom: 50px;
 }
 
-.row {
+#body-registro .row {
     display: flex;
     flex-wrap: wrap;
 }
 
-.col-md-6 {
+#body-registro .col-md-6 {
     flex: 0 0 50%;
     max-width: 50%;
     padding: 10px;
 }
 
-.img-fluid {
+#body-registro .img-fluid {
     max-width: 100%;
     height: auto;
 }
 
 /* Estilos del formulario */
-.form-container {
+#body-registro .form-container {
     background-color: #ffff;
     height: 100%;
     border-radius: 10px;
@@ -42,29 +42,29 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.mb-4 {
+#body-registro .mb-4 {
     text-align: center;
 }
 
-.form-group {
+#body-registro .form-group {
     margin-bottom: 20px;
     padding: 15px;
 }
 
-label {
+#body-registro label {
     display: block;
     font-weight: bold;
     color: #a66c26;
 }
 
-.form-control {
+#body-registro .form-control {
     width: 100%;
     padding: 10px;
     border: 1px solid #734f22;
     border-radius: 5px;
 }
 
-.btn-primary {
+#body-registro .btn-primary {
     background-color: #f25c05 !important;
     border: 1px solid #bf2604 !important;
     color: white;
@@ -79,17 +79,17 @@ label {
     margin-right: auto;
 }
 
-.btn-primary:hover {
+#body-registro .btn-primary:hover {
     background-color: #bf2604 !important;
 }
 
-.error-message {
+#body-registro .error-message {
     color: red;
     font-size: 0.9rem;
     padding-top: 40px;
 }
 
-#registro-footer {
+#body-registro #registro-footer {
     margin-top: auto;
     height: 2.5em;
     color: #d97c2b;
@@ -98,33 +98,33 @@ label {
     text-align: center;
 }
 
-.navbar {
+#body-registro .navbar {
     margin: 0;
     box-sizing: border-box;
 }
 
-.img-header{
+#body-registro .img-header{
     width: 3rem;
 }
 
-.navbar-brand {
+#body-registro .navbar-brand {
     font-size: 1.3em !important;
 }
 
-ul li a:hover {
+#body-registro ul li a:hover {
     color: #d97c2b !important;
     font-weight: bold;
 }
 
-.password-container {
+#body-registro .password-container {
     position: relative;
 }
 
-.password-container input {
+#body-registro .password-container input {
     padding-right: 40px;
 }
 
-.password-container i {
+#body-registro .password-container i {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -132,7 +132,7 @@ ul li a:hover {
     cursor: pointer;
 }
 
-#registroExitoso {
+#body-registro #registroExitoso {
     display: none;
     background-color: #dff0d8;
     color: #3c763d;
@@ -147,31 +147,83 @@ ul li a:hover {
     text-align: right;
 }
 
+#popupRegistro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    width: 200px;
+    height: 170px;
+    z-index: 10;
+    background-color: white;
+    border: none;
+    border: 2px solid #d97c2b;
+    border-radius: 10px;
+}
+
+#popupRegistro #msgRegistro {
+    
+    justify-content: center;
+}
+
+#popupRegistro img {
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: block;
+}
+
+#popupRegistro p {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+#popupRegistro #registro-button {
+    margin-top: 10px;
+    width: 80px;
+    border:none;
+    background-color: #d97c2b;
+    color: white;
+    font-size: 1em;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#popupRegistro #registro-button:hover {
+    border:none;
+    background-color:#f23005;
+    color: white;
+}
+
+
+
 @media (max-width: 768px) {
-    .col-md-6 {
+    #body-registro .col-md-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
 
-    #logo {
+    #body-registro #logo {
         width: 60px;
     }
 
-    header ul li {
+    #body-registro header ul li {
         margin-left: 15px;
     }
-
 }
 
 @media (max-width: 576px) {
 
 
-    #logo {
+    #body-registro #logo {
         width: 40px;
     }
 
-    header ul li {
+    #body-registro header ul li {
         margin-left: 10px;
     }
 }
@@ -192,44 +244,4 @@ ul li a:hover {
 
 .naranja {
     color: #d97c2b;
-}
-
-
-#popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    width: 200px;
-    height: 170px;
-    z-index: 10;
-    background-color: white;    
-    border-radius: 10%;
-    border: 2.5px solid #d97c2b;
-    text-align: center;
-}
-
-#popup img {
-    margin-top: 20px;
-}
-
-#popup p {
-    margin-top: 20px; 
-    margin-bottom: 0;   
-    font-size: 1em;   
-}
-
-#popup button {   
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: #d97c2b;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    width: 60px;
-    height: 20px;
-    font-size: 0.6em;
 }

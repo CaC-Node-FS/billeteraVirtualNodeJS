@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
-    const confirmacionMsg = document.getElementById("confirmacionMsg");
+    const confirmacionMsg = document.getElementById("confirmacionMsg")
 
     // Oculta el mensaje de confirmación al cargar la página.
     confirmacionMsg.style.display = "none";
@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
         //Muestra el msj de confirmación
         confirmacionMsg.style.display = "block";
 
-        // Reinicia el formulario después de 5 seg.
+        // Reinicia el formulario después de 3 seg.
         setTimeout(function () {
             contactForm.reset();
-            confirmacionMsg.style.display = "none";
-        }, 5000); 
+            confirmacionMsg.style.display = "none"
+        }, 3000)
     });
 });

@@ -4,49 +4,42 @@
     box-sizing: border-box;
 }
 /*//////////////////////////////////////////////////////////////*/
-body {
+#body-login {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* #login-footer {
-    margin-top: auto;
-    height: 2.5em;
-    color: white;
-    background-color: #0D0D0D;
-} */
-
-.img-header{
+#body-login .img-header{
     width: 3rem;
 }
 
-.navbar-brand {
+#body-login .navbar-brand {
     font-size: 1.3em !important;
 }
 
-ul li a:hover{
+#body-login ul li a:hover{
     color: #d97c2b !important;
     font-weight: bold;
 }
 
-#login-logo {
+#body-login #login-logo {
     grid-area: logo;
     justify-content: center;
     align-content: center;
 }
 
-#login-form {
+#body-login #login-form {
     grid-area: form;
     justify-content: center;
     align-content: center;
 }
 
-#login-logo-video {
+#body-login #login-logo-video {
     width: 250px;
 }
 
-#login-grid {
+#body-login #login-grid {
     display: grid;  
     grid-template-columns: 20% 20% 5% 35% 20%;
     grid-gap: 5px;
@@ -54,7 +47,7 @@ ul li a:hover{
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    #login-grid {
+    #body-login #login-grid {
         display: grid;
         grid-template-columns: 15% 25% 5% 35% 20%;
         grid-gap: 5px;
@@ -63,41 +56,41 @@ ul li a:hover{
 }
 
 @media screen and (max-width: 768px) {
-    #login-grid {
+    #body-login #login-grid {
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
         grid-gap: 5px;
         grid-template-areas: ". logo ."
                              ". form .";
     }
-    #login-logo {
+    #body-login #login-logo {
         text-align: center;
     }
-    #login-logo-video {
+    #body-login #login-logo-video {
         width: 200px;
     }
 }
 
-#login-register-link {
+#body-login #login-register-link {
     color: #d97c2b !important;
 }
 
-#login-register-link:hover {
+#body-login #login-register-link:hover {
     color: #BF2604 !important;
 }
 
-#login-register-link:active {
+#body-login #login-register-link:active {
     text-shadow: 2px 2px 8px black;
 }
 
-#login-register-label {
+#body-login #login-register-label {
     font-size: 0.8em;
     font-weight: bold;
     text-align: center;
     margin: 5%;
 }
 
-#login-logo {
+#body-login #login-logo {
     animation: login-logo-animation 2s ease-out forwards;
 }
 
@@ -110,7 +103,7 @@ ul li a:hover{
     }
 }
 
-#login-title {
+#body-login #login-title {
     text-align: center;   
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
@@ -130,72 +123,72 @@ ul li a:hover{
     }
 }
 
-.login-cell {
+#body-login .login-cell {
     margin: 10px;    
     background-color: none; 
 }
 
-.login-form-validation {
+#body-login .login-form-validation {
     text-align: start;
     font-size: 0.8em;
 }
 
-#login-eye-icon {
+#body-login #login-eye-icon {
     cursor:pointer;
     position: relative;
     bottom: 30px;
     left: 95%;
 }
 
-#login-message-error-user {
+#body-login #login-message-error-user {
     visibility: hidden;
 }
 
-#login-message-error-password {
+#body-login #login-message-error-password {
     position: relative;
     right: 20px;
     visibility: hidden;
 }
 
-#login-message-error-access {
+#body-login #login-message-error-access {
     margin-top: 4px !important;
     margin-bottom: 4px !important;
     text-align: center;
     visibility: hidden;
 }
 
-.btn {
+#body-login .btn {
     border:none;
     background-color: #d97c2b;
     color: white;
 }
 
-.btn:hover {
+#body-login .btn:hover {
     border:none;
     background-color:#f23005;
     color: white;
 }
 
-.btn:active {
+#body-login .btn:active {
     border:none;
     background-color:#f23005 !important;
     color: white !important;
     transform: scale(1.2);
 }
 
-.form-control {
+#body-login .form-control {
     border-radius: 0;
     border: none;
     border-bottom: 2px solid #d97c2b;
 }
 
 @media screen and (min-width: 992px) {
-    .form-control {
+    #body-login .form-control {
         padding-right: 30px !important;
     }
 }
 
-.form-control:focus{
+#body-login .form-control:focus{
     box-shadow: none;
     border: none;
     animation: border-bottom-progress 1s ease-out forwards;
@@ -230,7 +223,7 @@ ul li a:hover{
     color: #d97c2b;
 }
 
-.imput-group {
+#body-login .imput-group {
     display: block;
 }
 /*////////////////////////////////////////////////////////////*

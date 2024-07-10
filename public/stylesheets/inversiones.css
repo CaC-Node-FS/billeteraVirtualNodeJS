@@ -4,46 +4,50 @@
     box-sizing: border-box;
 }
 /*//////////////////////////////////////////////////////////////*/
-html, body {
+html {
     height: 100%;
 }
 
-.img-header{
+#body-inversiones {
+    height: 100%;
+}
+
+#body-inversiones .img-header{
     width: 3rem;
 }
 
-.navbar-brand {
+#body-inversiones .navbar-brand {
     font-size: 1.3em !important;
 }
 
-ul li a:hover{
+#body-inversiones ul li a:hover{
     color: #d97c2b !important;
     font-weight: bold;
 }
 
-#vista {
+#body-inversiones #vista-inversiones {
     height: calc(100vh - 120px);
 }
 
-main {
+#body-inversiones #main-inveersiones {
     display: grid;
     width: 100%;
     grid-template-columns: 100%;
     grid-template-areas: "info";
 }
 
-.accordion {
+#body-inversiones .accordion {
     --bs-accordion-border-radius: 30px !important;
     --bs-accordion-inner-border-radius: 30px !important;
 }
 
-#inversiones-menu {
+#body-inversiones #inversiones-menu {
     grid-area: inversiones-menu;
     width: 100%;
     padding: 10px;
 }
 
-#info {
+#body-inversiones #info-inversiones {
     height: 100%;
     display: grid;
     grid-template-columns: 10% 80% 10%;
@@ -53,26 +57,26 @@ main {
                          ". inversiones-menu .";
 }
 
-#inversiones-menu .nav-link {
+#body-inversiones #inversiones-menu .nav-link {
     margin: 2px;
     background-color: #d97c2b;
     opacity: 1;
     color: white;
 }
 
-#inversiones-menu .nav-link:hover {
+#body-inversiones #inversiones-menu .nav-link:hover {
     background-color: #f23005;
     opacity: 0.8;
     color: white;
 }
 
-#inversiones-menu .nav-link.active {
+#body-inversiones #inversiones-menu .nav-link.active {
     background-color: #f23005 !important;
     opacity: 1;
     color: white;
 }
 
-input::-webkit-inner-spin-button {
+#body-inversiones input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -81,39 +85,39 @@ input::-webkit-inner-spin-button {
     -moz-appearance: textfield;
 } */
 
-#montoPF {
+#body-inversiones #montoPF {
     font-family: "Graduate", serif;
 }
 
-#misPF, #historialPF {
+#body-inversiones #misPF, #historialPF {
     margin-top: 20px;
 }
 
-#inversiones-menu {
+#body-inversiones #inversiones-menu {
     width: 100%;
     justify-content: center;
     grid-area: inversiones-menu;
 }
 
-#inversiones-menu .form-select, #inversiones-menu input {
+#body-inversiones #inversiones-menu .form-select, #body-inversiones #inversiones-menu input {
     box-shadow: 2px 2px #d97c2b;
 }
 
-#inversiones-menu .form-select:focus, #inversiones-menu input:focus {
+#body-inversiones #inversiones-menu .form-select:focus, #body-inversiones #inversiones-menu input:focus {
     box-shadow: none;
     border: 1px solid #f23005 ;
 }
 
-#inversiones-menu .accordion-item {
+#body-inversiones #inversiones-menu .accordion-item {
     /* width: 750px; */
     min-width: 350px;    
 }
 
-#inversiones-menu .accordion-button:not(collapsed) {
+#body-inversiones #inversiones-menu .accordion-button:not(collapsed) {
     background-color: #d97c2b;
 }
 
-#inversiones-menu  #nuevoPF-button {
+#body-inversiones #inversiones-menu  #nuevoPF-button {
     width: 200px !important;
     margin-top: 10px;
     box-shadow: none;
@@ -123,40 +127,40 @@ input::-webkit-inner-spin-button {
     font-size: 1em;
 }
 
-#inversiones-menu  #nuevoPF-button:hover {
+#body-inversiones #inversiones-menu  #nuevoPF-button:hover {
     border:none;
     background-color:#f23005;
     color: white;
 }
 
-#inversiones-menu  #nuevoPF-button:active {
+#body-inversiones #inversiones-menu  #nuevoPF-button:active {
     border:none;
     background-color:#f23005 !important;
     color: white !important;
     transform: scale(1.2);
 }
 
-#inversiones-menu .accordion-button {
+#body-inversiones #inversiones-menu .accordion-button {
     color: white;
 }
 
-#inversiones-menu .accordion-button:focus {
+#body-inversiones #inversiones-menu .accordion-button:focus {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
     color: white;
 }
 
-#inversiones-menu .accordion-button:not(collapsed) {
+#body-inversiones #inversiones-menu .accordion-button:not(collapsed) {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
     color: white;
 }
 
-#inversiones-menu nav button {
+#body-inversiones #inversiones-menu nav button {
     border-radius: 30px;
 }
 
-#popupPF {
+#body-inversiones #popupPF {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -171,20 +175,20 @@ input::-webkit-inner-spin-button {
     box-shadow: 2px 2px #f23005;
 }
 
-#popupPF p {
+#body-inversiones #popupPF p {
     margin-bottom: 4px;
     padding-left: 5px;
     padding-right: 5px;
     font-size: 0.8em;
 }
 
-#popupPF h6 {
+#body-inversiones #popupPF h6 {
     background-color: lightgray;
     margin-top: 15px;
     padding-left: 5px;
 }
 
-#popupPF button {
+#body-inversiones #popupPF button {
     margin-left: 5px;
     margin-right: 5px;
     background-color: #d97c2b;
@@ -196,11 +200,11 @@ input::-webkit-inner-spin-button {
     font-size: 0.7em;
 }
 
-#tasasPF h6 {
+#body-inversiones #tasasPF h6 {
     margin-top: 15px;
 }
 
-#tasas-table {
+#body-inversiones #tasas-table {
     font-size: 0.7em;
     display: flex;
     flex-flow: column;
@@ -210,46 +214,46 @@ input::-webkit-inner-spin-button {
     border-spacing: 0 3px;
 }
 
-#tasas-table p {
+#body-inversiones #tasas-table p {
     text-align: start;
     margin: 0;
 }
 
-#tasas-table td {
+#body-inversiones #tasas-table td {
     padding-left: 2%;
     padding-right: 2%;
     font-family: "Graduate", serif;
 }
 
-#tasas-table tr:nth-child(even) {
+#body-inversiones #tasas-table tr:nth-child(even) {
     background-color:  lightgray !important
 }
 
-#tasas-table tr:nth-child(odd) {
+#body-inversiones #tasas-table tr:nth-child(odd) {
     background-color: rgba(255,255,255,0.8);
 }
 
-#tasas-table thead tr {
+#body-inversiones #tasas-table thead tr {
     background-color: #d97c2b !important;    
 }
   
-#tasas-table tbody {
+#body-inversiones #tasas-table tbody {
     display: block;
     overflow-y: auto;
 }
   
-#tasas-table tr {
+#body-inversiones #tasas-table tr {
     width: 100%;
     display: table;
     table-layout: fixed;
     text-align: start;
 }
 
-.accordion-body #logo {
+#body-inversiones .accordion-body #logo {
     width: 150px;
 }
 
-.accordion-body figcaption {
+#body-inversiones .accordion-body figcaption {
     font-size: 1.5em;
     font-weight: 600;
 }
@@ -257,28 +261,28 @@ input::-webkit-inner-spin-button {
 /* Compra-venta de divisas */
 
 
-.moneda{
+#body-inversiones .moneda{
     margin-bottom: 10px;
 }
 
-.moneda select{
+#body-inversiones .moneda select{
     color:white;
     background-color: #d97c2b;
 }
 
-.moneda select, .moneda input{
+#body-inversiones .moneda select, .moneda input{
     border:1px solid #d97c2b;
     border-radius: 5px;
     text-align: center;
     box-shadow:none !important;
 }
 
-.moneda input, #info-taza{
+#body-inversiones .moneda input, #info-taza{
     color:#d97c2b;
     font-weight: bold;
 }
 
-#btn-comprar, #btn-cambiar-select {
+#body-inversiones #btn-comprar, #btn-cambiar-select {
     background-color: #d97c2b;
     color: white;
     font-weight: bold;
@@ -286,20 +290,20 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
 }
 
-#btn-cambiar-select{
+#body-inversiones #btn-cambiar-select{
     width: 2rem;
 }
 
 
 @media screen and (max-height: 650px) {
-    #body {
+    #body-inversiones {
         height: 650px;
         overflow-y: scroll;
     }
 }
 
 @media screen and (max-width: 476px) {
-    #info {
+    #body-inversiones #info {
         height: 100%;
         display: grid;
         grid-template-columns: 100%;
@@ -308,7 +312,7 @@ input::-webkit-inner-spin-button {
         grid-template-areas: "."
                              "inversiones-menu";
     }
-    th, td {
+    #body-inversiones th, td {
         font-size: 2em !important;
     }
 }

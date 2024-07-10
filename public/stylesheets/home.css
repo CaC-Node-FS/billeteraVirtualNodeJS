@@ -4,24 +4,28 @@
     box-sizing: border-box;
 }
 /*//////////////////////////////////////////////////////////////*/
-html, body {
+html {
     height: 100%;
 }
 
-.img-header{
+#body-home {
+    height: 100%;
+}
+
+#body-home .img-header{
     width: 3rem;
 }
 
-.navbar-brand {
+#body-home .navbar-brand {
     font-size: 1.3em !important;
 }
 
-ul li a:hover{
+#body-home ul li a:hover{
     color: #d97c2b !important;
     font-weight: bold;
 }
 
-#text-bienvenida {
+#body-home #text-bienvenida {
     grid-area: bienvenida;
     width: 100%;
     margin: 0;
@@ -36,7 +40,7 @@ ul li a:hover{
  
 }
 
-main {
+#body-home #main-home {
     display: grid;
     width: 100%;
     min-height: 100%;
@@ -46,29 +50,29 @@ main {
                          "info";
 }
 
-#home-eye-icon {
+#body-home #home-eye-icon {
     display: inline-block;
     font-size: 1em;
     padding-left: 5px;
     cursor: pointer;
 }
-#CBU {    
+#body-home #CBU {
     display: inline-block;
     margin-bottom: 2px;
 }
 
-#home-copy-CBU {
+#body-home #home-copy-CBU {
     display: inline-block;
     cursor: pointer;
     width: 1em;
     margin-left: 5px;
 }
 
-#home-copy-CBU:active {
+#body-home #home-copy-CBU:active {
     width: 1.2em;
 }
 
-#CBU-copiado {
+#body-home #CBU-copiado {
     position: relative;
     background-clip: content-box;
     left: 75%;
@@ -77,11 +81,11 @@ main {
     visibility: hidden;
 }
  
-#saldo {
+#body-home #saldo {
     visibility: hidden;
 }
 
-#info {
+#body-home #info-home {
     grid-area: info;
     justify-content: center;
     align-content: center;
@@ -106,11 +110,11 @@ main {
     color: #d97c2b;
 }
 
-#info span {
+#body-home #info-home span {
     font-weight: bold;
 }
 
-#cuenta_datos, #cuenta_tarjeta {
+#body-home #cuenta_datos, #body-home #cuenta_tarjeta {
     margin: 0;
     padding: 0;
     padding-left: 10px;
@@ -123,45 +127,45 @@ main {
     font-weight: 400;
 }
 
-#cuenta_datos {    
+#body-home #cuenta_datos {    
     grid-area: cuenta_datos;
     font-size: 1em;
     background-color:  #d97c2b;
 }
 
-#cuenta_tarjeta {    
+#body-home #cuenta_tarjeta {    
     grid-area: cuenta_tarjeta;
     font-size: 0.9em;
     background-color: #BF2604;
 }
 
-#logo_tarjeta {
+#body-home #logo_tarjeta {
     width: 15%;
 }
 
-#cuenta_tarjeta figure p {
+#body-home #cuenta_tarjeta figure p {
     margin: 0;
 }
 
-#cuenta_tarjeta p {
+#body-home #cuenta_tarjeta p {
     margin-bottom: 2px;
 }
 
-#cuenta_tarjeta figcaption {
+#body-home #cuenta_tarjeta figcaption {
     font-size: smaller;
 }
 
-#numero_tarjeta {
+#body-home #numero_tarjeta {
     word-spacing: 5px;
 }
 
-#cuenta_movimientos {
+#body-home #cuenta_movimientos {
     width: 100%;
     /* max-width: 750px; */
     grid-area: cuenta_movimientos;
 }
 
-#cuenta_movimientos table {
+#body-home #cuenta_movimientos table {
     font-size: 0.8em;
     display: flex;
     flex-flow: column;
@@ -170,7 +174,7 @@ main {
     border-collapse: separate;
     border-spacing: 0 3px;
 }
-#cuenta_movimientos table td {
+#body-home #cuenta_movimientos table td {
     padding-left: 2%;
     padding-right: 2%;
     height: 50px;
@@ -178,66 +182,66 @@ main {
 }
 
 
-#cuenta_movimientos table tr {
+#body-home #cuenta_movimientos table tr {
     height: 50px;
 }
 
-#cuenta_movimientos table .fecha, #cuenta_movimientos table .tipo {
+#body-home #cuenta_movimientos table .fecha, #body-home #cuenta_movimientos table .tipo {
     width: 10%;
 }
-#cuenta_movimientos table .concepto {
+#body-home #cuenta_movimientos table .concepto {
     width: 50%;
 }
-#cuenta_movimientos table .importe{
+#body-home #cuenta_movimientos table .importe{
     width: 30%;
     padding-right: 20px;
 }
 
-#cuenta_movimientos table tr:nth-child(even) {
+#body-home #cuenta_movimientos table tr:nth-child(even) {
     background-color:  lightgray !important
 }
 
-#cuenta_movimientos table tr:nth-child(odd) {
+#body-home #cuenta_movimientos table tr:nth-child(odd) {
     background-color: rgba(255,255,255,0.8);
 }
 
-#cuenta_movimientos table thead tr {
+#body-home #cuenta_movimientos table thead tr {
     background-color: #d97c2b !important;    
 }
   
-#cuenta_movimientos table tbody {
+#body-home #cuenta_movimientos table tbody {
     display: block;
     overflow-y: auto;
 }
   
-#cuenta_movimientos table tr {
+#body-home #cuenta_movimientos table tr {
     width: 100%;
     display: table;
     table-layout: fixed;
     text-align: center;
 }
 
-#cuenta_movimientos .accordion-item {
+#body-home #cuenta_movimientos .accordion-item {
     min-width: 350px;    
 }
 
-.accordion {
+#body-home .accordion {
     --bs-accordion-border-radius: 30px !important;
     --bs-accordion-inner-border-radius: 30px !important;
 }
 
-#cuenta_movimientos .accordion-button:focus {
+#body-home #cuenta_movimientos .accordion-button:focus {
     --bs-accordion-btn-focus-box-shadow:none;
     background-color: #d97c2b;
     color: white;
 }
 
-#cuenta_movimientos .accordion-button:not(collapsed) {
+#body-home #cuenta_movimientos .accordion-button:not(collapsed) {
     background-color: #d97c2b;
     color: white;
 }
 
-#info {
+#body-home #info-home {
     display: grid;
     justify-items: center;
     align-content: start;
@@ -248,19 +252,19 @@ main {
                          ". cuenta_movimientos cuenta_movimientos .";
 }
 
-#desdeDate {
+#body-home #desdeDate {
     grid-area: desdeDate;
 }
 
-#hastaDate {
+#body-home #hastaDate {
     grid-area: hastaDate;
 }
 
-#buscarMovButton {
+#body-home #buscarMovButton {
     grid-area: buscarMovButton;
 }
 
-#movHistoricos {
+#body-home #movHistoricos {
     width: 60%;
     display: grid;
     grid-template-columns: 37.5% 37.5% 25%;
@@ -271,13 +275,13 @@ main {
     align-items: end;
 }
 
-#movHistoricos h6 {
+#body-home #movHistoricos h6 {
     grid-area: h6;
     margin: 0;
     width: 100%;
 }
 
-#desdeDate input, #hastaDate input {
+#body-home #desdeDate input, #body-home #hastaDate input {
     display: block;    
     width: 90%;
     min-width: 100px;
@@ -286,7 +290,7 @@ main {
     padding: 5px;
 }
 
-#buscarMovButton {
+#body-home #buscarMovButton {
     width: 90px;
     height: 40px;
     border: none;
@@ -295,12 +299,12 @@ main {
     color: white;
 }
 
-#buscarMovButton:active {
+#body-home #buscarMovButton:active {
     transform: scale(1.2);
 }
 
 @media screen and (max-width: 992px) {
-    #info {
+    #body-home #info-home {
         display: grid;
         justify-items: start;
         align-content: start;
@@ -309,7 +313,7 @@ main {
         grid-template-areas: ". cuenta_datos  cuenta_tarjeta ."
                              ". cuenta_movimientos cuenta_movimientos .";
     }
-    #cuenta_datos, #cuenta_tarjeta {
+    #body-home #cuenta_datos, #body-home #cuenta_tarjeta {
         margin: 0;
         padding: 0;
         padding-left: 10px;
@@ -317,23 +321,23 @@ main {
         height: 140px;        
         font-size: 0.72em;
     }
-    #movHistoricos {
+    #body-home #movHistoricos {
         width: 75%;
     }
 }
 
 @media screen and (max-width: 576px) {
-    #desdeDate, #hastaDate {
+    #body-home #desdeDate, #body-home #hastaDate {
         font-size: 0.75em;
     }
-    #buscarMovButton {
+    #body-home #buscarMovButton {
         width: 70px;
         font-size: 0.75em;
     }
-    .accordion-body table td {
+    #body-home .accordion-body table td {
         font-size: 0.7em;
     }
-    #info {
+    #body-home #info-home {
         display: grid;
         justify-items: center;
         align-content: start;
@@ -344,10 +348,10 @@ main {
                              ". cuenta_tarjeta ." 
                              ". cuenta_movimientos .";
     }
-    #cuenta_movimientos table {
+    #body-home #cuenta_movimientos table {
         font-size: 0.7em;
     }
-    #cuenta_datos, #cuenta_tarjeta {
+    #body-home #cuenta_datos, #body-home #cuenta_tarjeta {
         margin: 0;
         padding: 0;
         padding-left: 10px;
@@ -355,19 +359,19 @@ main {
         height: 140px;        
         font-size: 0.72em;
     }
-    #movHistoricos {
+    #body-home #movHistoricos {
         width: 100%;
     }
 }
 
 @media screen and (max-height: 650px) {
-    #body {
+    #body-home {
         height: 650px;
         overflow-y: scroll;
     }
 }
 
-h1 {
+#body-home h1 {
     color: white;
     text-align: center;
 }

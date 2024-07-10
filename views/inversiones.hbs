@@ -1,4 +1,5 @@
-<header>
+<div id="body-inversiones">
+  <header>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
@@ -10,7 +11,7 @@
             class="animate__animated animate__flipInX me-3">
         </div>
         <a class="navbar-brand ms-5 d-none d-lg-flex justify-content-center align-items-center" href="./home">
-            <img src="images/logo.png" class="img-header" alt="Logo billetera CAC"
+          <img src="images/logo.png" class="img-header" alt="Logo billetera CAC"
             class="animate__animated animate__flipInX me-3">
           <span class="fw-bold ms-3">Codo a codo homebanking</span>
         </a>
@@ -53,11 +54,11 @@
 
   </header>
 
-  <main>
+  <main id="main-inversiones">
 
-    <div id="vista">
+    <div id="vista-inversiones">
 
-      <article id="info">
+      <article id="info-inversiones">
 
         <section id="inversiones-menu">
 
@@ -108,15 +109,25 @@
                         </div>
                         <div class="col-md-6">
                           <label for="montoPF" class="form-label">Monto en pesos</label>
-                          <input id="montoPF" type="number" step='0.01' min="5000" class="form-control" placeholder="$" name="montoPF" required>
+                          <input id="montoPF" type="number" step='0.01' min="5000" class="form-control" placeholder="$"
+                            name="montoPF" required>
                         </div>
                         <div class="col-md-6">
                           <label for="diasPF" class="form-label">Plazo en días</label>
                           <select id="diasPF" class="form-select" name="diasPF" required>
                             <option selected disabled value="">Días</option>
-                            <option value="30">30</option><option value="60">60</option><option value="90">90</option><option value="120">120</option>                            
-                            <option value="150">150</option><option value="180">180</option><option value="210">210</option><option value="240">240</option>                            
-                            <option value="270">270</option><option value="300">300</option><option value="330">330</option><option value="360">360</option>
+                            <option value="30">30</option>
+                            <option value="60">60</option>
+                            <option value="90">90</option>
+                            <option value="120">120</option>
+                            <option value="150">150</option>
+                            <option value="180">180</option>
+                            <option value="210">210</option>
+                            <option value="240">240</option>
+                            <option value="270">270</option>
+                            <option value="300">300</option>
+                            <option value="330">330</option>
+                            <option value="360">360</option>
                           </select>
                         </div>
                         <div class="text-center">
@@ -253,11 +264,11 @@
                   </div>
                   <div class="moneda">
                     <select id="moneda-dos" class="mb-2">
-                        <option value="ARS">Pesos</option>
-                        <option value="USD" selected>Dolares</option>
-                        <option value="EUR">Euros</option>
-                        <option value="BRL">Reales</option>
-                      </select>
+                      <option value="ARS">Pesos</option>
+                      <option value="USD" selected>Dolares</option>
+                      <option value="EUR">Euros</option>
+                      <option value="BRL">Reales</option>
+                    </select>
                     <input type="number" id="cantidad-dos" placeholder="0">
                   </div>
                   <div class="compra-divisa">
@@ -287,8 +298,8 @@
   <!-- <footer id="home-footer" class="text-center">
         <p>Cac 24124 Todos los derechos reservados © 2024 - Banco Cac</p>
     </footer> -->
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/inversiones.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/inversiones.js"></script>

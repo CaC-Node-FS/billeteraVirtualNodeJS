@@ -49,7 +49,6 @@ const loginForm = document.getElementById("login")
             body: JSON.stringify(loginData)
           })
           const data = await res.json()
-          console.log('data ',data)
           if(data.usuario){
           // if(Object.keys(data).lengt > 0) {
             document.getElementById('login-message-error-access').style.visibility = 'hidden'
@@ -66,16 +65,16 @@ const loginForm = document.getElementById("login")
     
     })
 
-    const passwordIcon = document.getElementById("login-eye-icon");
+    const passwordIcon = document.getElementById("login-eye-icon")
     
-    const password = document.getElementById("clave");
+    const password = document.getElementById("clave")
     
     passwordIcon.addEventListener("click", () => {   
     
-      const type = password.getAttribute("type") === "password" ? "text" : "password";      
+      const type = password.getAttribute("type") === "password" ? "text" : "password"
       
-      password.setAttribute("type", type);
+      password.setAttribute("type", type)
       
-      passwordIcon.classList.toggle("bi-eye");
+      passwordIcon.classList.toggle("bi-eye")
    
-    });
+    })

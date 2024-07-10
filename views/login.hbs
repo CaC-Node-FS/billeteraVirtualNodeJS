@@ -1,102 +1,106 @@
-<header>
+<div id="body-login">
+    <header>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <div class="w-50 d-flex justify-content-between d-lg-none">
-                <a class="navbar-brand d-lg-none" href="./index">
-                    <i class="bi bi-arrow-left fw-bolder"></i>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <div class="w-50 d-flex justify-content-between d-lg-none">
+                    <a class="navbar-brand d-lg-none" href="./index">
+                        <i class="bi bi-arrow-left fw-bolder"></i>
+                    </a>
+                    <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
+                        class="animate__animated animate__flipInX me-3">
+                </div>
+                <a class="navbar-brand ms-5 d-none d-lg-flex justify-content-center align-items-center" href="./index">
+                    <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
+                        class="animate__animated animate__flipInX me-3">
+                    <span class="fw-bold ms-3">Codo a codo homebanking</span>
                 </a>
-                <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
-                    class="animate__animated animate__flipInX me-3">
-            </div>
-            <a class="navbar-brand ms-5 d-none d-lg-flex justify-content-center align-items-center" href="./index">
-                <img src="/images/logo.png" class="img-header" alt="Logo billetera CAC"
-                    class="animate__animated animate__flipInX me-3">
-                <span class="fw-bold ms-3">Codo a codo homebanking</span>
-            </a>
-            <button class="navbar-toggler position-absolute end-0 me-5" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse me-5" id="navbarText">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <button class="navbar-toggler position-absolute end-0 me-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse me-5" id="navbarText">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="./index">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./registro">Registro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contacto">Contacto</a>
                         </li>
                     </ul>
-                </span>
+                    <span class="navbar-text">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./registro">Registro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </span>
+                </div>
             </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div id="login-grid">
+
+            <div id="login-logo">
+                <video id="login-logo-video" autoplay loop muted>
+                    <source src="/images/logo.webm" type="video/webm">
+                </video>
+            </div>
+
+            <div id="login-form">
+                <p id="login-title">¡Bienvenido!</p>
+                <form id="login" method="post" enctype="multipart/form-data">
+                    <!-- usuario input -->
+                    <div class="form-floating login-cell">
+                        <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Su Usuario"
+                            autocomplete="off">
+                        <label for="usuario">Su usuario</label>
+                        <p class="login-form-validation text-danger m-0" id="login-message-error-user"><img
+                                src="/images/login-error-icon.svg" alt="error-icon" width="12px"> Debe introducir
+                            su nombre de usuario</p>
+                    </div>
+
+                    <!-- clave input -->
+                    <div class="form-floating login-cell">
+                        <input type="password" id="clave" class="form-control" name="clave" placeholder="Su clave"
+                            aria-label="login-eye-icon" maxlength="20" autocomplete="off">
+                        <label for="clave">Su clave</label>
+                        <span><i id="login-eye-icon" class="bi-eye bi-eye-slash"></i></span>
+                        <span class="login-form-validation text-danger m-0" id="login-message-error-password"><img
+                                src="/images/login-error-icon.svg" alt="error-icon" width="12px"> Su clave debe
+                            tener entre 8 y 20 caracteres</span>
+                    </div>
+
+                    <!-- Error de acceso mensaje -->
+                    <p class="login-form-validation text-danger m-0" id="login-message-error-access"><img
+                            src="/images/login-error-icon.svg" alt="error-icon" width="12px"> El usuario y/o
+                        clave ingresados son inválidos</p>
+
+                    <div class="text-center">
+                        <!-- <a href="./home.html"><input class="btn btn-lg" name="login" value="INICIAR SESIÓN"></a> -->
+                        <a href="#"><input class="btn btn-lg" name="login" type="submit" value="INICIAR SESIÓN"></a>
+                        <p id="login-register-label">¿No tiene una cuenta? <a href="./registro"
+                                id="login-register-link">Regístrese</a></p>
+                    </div>
+                </form>
+            </div>
+
         </div>
-    </nav>
-</header>
 
-<main>
+    </main>
 
-    <div id="login-grid">
+    <footer id="footer" class="text-center d-none d-lg-block">
+        <p class="naranja">© 2024 Codo a codo homebanking. Todos los derechos reservados. Prohibida la duplicación,
+            distribución o almacenamiento en cualquier medio.</p>
+    </footer>
 
-        <div id="login-logo">
-            <video id="login-logo-video" autoplay loop muted>
-                <source src="/images/logo.webm" type="video/webm">
-            </video>
-        </div>
-
-        <div id="login-form">
-            <p id="login-title">¡Bienvenido!</p>
-            <form id="login" method="post" enctype="multipart/form-data">
-                <!-- usuario input -->
-                <div class="form-floating login-cell">
-                    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Su Usuario"
-                        autocomplete="off">
-                    <label for="usuario">Su usuario</label>
-                    <p class="login-form-validation text-danger m-0" id="login-message-error-user"><img
-                            src="/images/login-error-icon.svg" alt="error-icon" width="12px"> Debe introducir
-                        su nombre de usuario</p>
-                </div>
-
-                <!-- clave input -->
-                <div class="form-floating login-cell">
-                    <input type="password" id="clave" class="form-control" name="clave" placeholder="Su clave"
-                        aria-label="login-eye-icon" maxlength="20" autocomplete="off">
-                    <label for="clave">Su clave</label>
-                    <span><i id="login-eye-icon" class="bi-eye bi-eye-slash"></i></span>
-                    <span class="login-form-validation text-danger m-0" id="login-message-error-password"><img
-                            src="/images/login-error-icon.svg" alt="error-icon" width="12px"> Su clave debe
-                        tener entre 8 y 20 caracteres</span>
-                </div>
-
-                <!-- Error de acceso mensaje -->
-                <p class="login-form-validation text-danger m-0" id="login-message-error-access"><img
-                        src="/images/login-error-icon.svg" alt="error-icon" width="12px"> El usuario y/o
-                    clave ingresados son inválidos</p>
-
-                <div class="text-center">
-                    <!-- <a href="./home.html"><input class="btn btn-lg" name="login" value="INICIAR SESIÓN"></a> -->
-                    <a href="#"><input class="btn btn-lg" name="login" type="submit" value="INICIAR SESIÓN"></a>
-                    <p id="login-register-label">¿No tiene una cuenta? <a href="./registro" id="login-register-link">Regístrese</a></p>
-                </div>
-            </form>
-        </div>
-
-    </div>
-
-</main>
-
-<footer id="footer" class="text-center d-none d-lg-block">
-    <p class="naranja">© 2024 Codo a codo homebanking. Todos los derechos reservados. Prohibida la duplicación,
-        distribución o almacenamiento en cualquier medio.</p>
-</footer>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

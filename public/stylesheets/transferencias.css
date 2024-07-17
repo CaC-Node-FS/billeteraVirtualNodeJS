@@ -1,0 +1,436 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*//////////////////////////////////////////////////////////////*/
+html {
+    height: 100%;
+}
+
+#body-transferencias {
+    height: 100%;
+}
+
+#body-transferencias .img-header{
+    width: 4rem;
+}
+
+#body-transferencias .navbar-brand {
+    font-size: 1em !important;
+}
+
+#body-transferencias ul li a:hover{
+    color: #d97c2b !important;
+    font-weight: bold;
+}
+
+#body-transferencias #vista-transferencias {
+    height: calc(100vh - 120px);
+}
+
+#body-transferencias #main-transferencias {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-areas: "info";
+}
+
+#body-transferencias .accordion {
+    --bs-accordion-border-radius: 30px !important;
+    --bs-accordion-inner-border-radius: 30px !important;
+}
+
+#body-transferencias #transferencias-menu {
+    grid-area: transferencias-menu;
+    width: 100%;
+    padding: 10px;
+}
+
+#body-transferencias #info-transferencias {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 10% 90%;
+    grid-gap: 10px;
+    grid-template-areas: " . . ."
+                         ". transferencias-menu .";
+}
+
+#body-transferencias #transferencias-menu .nav-link {
+    margin: 2px;
+    background-color: #d97c2b;
+    opacity: 1;
+    color: white;
+}
+
+#body-transferencias #transferencias-menu .nav-link:hover {
+    background-color: #f23005;
+    opacity: 0.8;
+    color: white;
+}
+
+#body-transferencias #transferencias-menu .nav-link.active {
+    background-color: #f23005 !important;
+    opacity: 1;
+    color: white;
+}
+
+#body-transferencias input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#buscarCBU:active {
+    border: none;
+}
+
+/* input[type="number"] {
+    -moz-appearance: textfield;
+} */
+
+#body-transferencias #transferencias-menu .form-select, #body-transferencias #transferencias-menu input {
+    box-shadow: 2px 2px #d97c2b;
+}
+
+#body-transferencias #transferencias-menu .form-select:focus, #body-transferencias #transferencias-menu input:focus {
+    box-shadow: none;
+    border: 1px solid #f23005 ;
+}
+
+#body-transferencias #transferencias-confirmar-button, #body-transferencias #transferencias-cancelar-button, #body-transferencias #transferencias-transferir-button {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#body-transferencias #transferencias-confirmar-button:hover, #body-transferencias #transferencias-cancelar-button:hover, #body-transferencias #transferencias-transferir-button:hover {
+    background-color: #f23005;
+}
+
+#body-transferencias #transferencias-confirmar-button:active, #body-transferencias #transferencias-cancelar-button:active, #body-transferencias #transferencias-transferir-button:active {
+    background-color: #f23005;
+    transform: scale(1.2);
+}
+
+#body-transferencias #transferencias-menu .accordion-item {
+    min-width: 300px;    
+}
+
+#body-transferencias #transferencias-menu .accordion-button:not(collapsed) {
+    background-color: #d97c2b;
+}
+
+#body-transferencias #transferencias-menu  #buscarCBU-button {
+    width: 100px !important;
+    margin-top: 10px;
+    box-shadow: none;
+    border: none;
+    background-color: #d97c2b;
+    color: white;
+    font-size: 1em;
+}
+
+#body-transferencias #transferencias-menu #buscarCBU-button:hover {
+    border:none;
+    background-color:#f23005;
+    color: white;
+}
+
+#body-transferencias #transferencias-menu  #buscarCBU-button:active {
+    border:none;
+    background-color:#f23005 !important;
+    color: white !important;
+    transform: scale(1.2);
+}
+#body-transferencias #transferencias-menu input {
+    box-shadow: none;
+}
+
+#body-transferencias #transferencias-menu #buscarCBU:focus {
+    border: none !important;
+}
+
+#body-transferencias #transferencias-menu .accordion-button {
+    color: white;
+}
+
+#body-transferencias #transferencias-menu .accordion-button:focus {
+    --bs-accordion-btn-focus-box-shadow:none;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#body-transferencias #transferencias-menu .accordion-button:not(collapsed) {
+    --bs-accordion-btn-focus-box-shadow:none;
+    background-color: #d97c2b;
+    color: white;
+}
+
+#body-transferencias #transferencias-menu nav button {
+    border-radius: 30px;
+}
+
+#body-transferencias .bi, #body-transferencias .bi-trash3 {
+    /* display: block !important; */
+    font-size: 1em !important;
+    cursor: pointer;
+    color: #d97c2b;
+}
+
+#body-transferencias .bi:hover, #body-transferencias .bi-trash3:hover {
+    color: #f23005;
+}
+
+#body-transferencias .bi:active, #body-transferencias .bi-trash3:active {
+    color: #f23005;
+    scale: 1.2 !important;
+}
+
+#body-transferencias .transferencias-agenda-activar {
+    cursor: pointer;
+}
+
+#body-transferencias .col-boleta-servicio, #body-transferencias .transferencias-agenda-eliminar {
+    cursor: pointer;
+   
+}
+
+#body-transferencias .col-boleta-servicio:active, #body-transferencias .transferencias-agenda-eliminar:active {
+    transform: scale(1.2);
+}
+
+#body-transferencias #transferencias-agenda-table, #body-transferencias #historialTransferencias-table, #body-transferencias #agendatransferencias-table {
+    font-size: 0.8em;
+    /* display: flex; */
+    /* flex-flow: column; */
+    /* table-layout: fixed; */
+   
+    width: 100% !important;
+    max-height: 160px;
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    margin-bottom: 20px;
+    font-family: "Graduate", serif;
+}
+
+#body-transferencias #transferencias-agenda-table tr, #body-transferencias #historialTransferencias-table tr, #body-transferencias #agendatransferencias-table tr {
+    text-align: left;
+    height: 50px;
+    /* display: table; */
+    /* table-layout: fixed; */
+}
+ 
+
+#body-transferencias #transferencias-agenda-table th:nth-child(1) {
+    width: 35%;    
+}
+
+#body-transferencias #transferencias-agenda-table th:nth-child(2) {
+    width: 35%;
+}
+
+#body-transferencias #transferencias-agenda-table th:nth-child(3) {
+    width: 20%;
+}
+
+#body-transferencias #transferencias-agenda-table th:nth-child(4) {
+    width: 10%;
+}
+
+#body-transferencias #historialTransferencias-table th:nth-child(1) {
+    width: 25%;    
+}
+
+#body-transferencias #historialTransferencias-table th:nth-child(2) {
+    width: 25%;
+}
+
+#body-transferencias #historialTransferencias-table th:nth-child(3) {
+    width: 30%;
+}
+
+#body-transferencias #historialTransferencias-table th:nth-child(4) {
+    width: 20%;
+} 
+
+#body-transferencias #transferencias-agenda-table td, #body-transferencias #historialTransferencias-table td, #body-transferencias #agendatransferencias-table td {
+    font-family: "Graduate", serif;
+    font-size: 1.2em;
+}
+
+#body-transferencias #transferencias-agenda-table tr:nth-child(even), #body-transferencias #historialTransferencias-table tr:nth-child(even), #body-transferencias #agendatransferencias-table tr:nth-child(even) {
+    background-color:  lightgray !important
+}
+
+#body-transferencias #transferencias-agenda-table tr:nth-child(odd), #body-transferencias #historialTransferencias-table tr:nth-child(odd), #body-transferencias #agendatransferencias-table tr:nth-child(odd) {
+    background-color: rgba(255,255,255,0.8) !important;
+}
+
+#body-transferencias #transferencias-agenda-table thead tr:first-child, #body-transferencias #historialTransferencias-table thead tr:first-child, #body-transferencias #agendatransferencias-table thead tr:first-child {
+    background-color: #d97c2b !important;    
+}
+
+
+#body-transferencias .bi-download {
+    margin-top: 30px;
+}
+
+#body-transferencias .bi-x-lg {
+    font-size: 0.8em !important;
+}
+
+#body-transferencias #popupBoleta {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    width: 320px;
+    height: 300px;
+    z-index: 10;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px #f23005;
+    text-align: center;
+}
+
+#body-transferencias #popupBoleta p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 5px;
+    font-size: 0.9em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+}
+
+#body-transferencias #popupBoleta h6 {
+    background-color: lightgray;
+    padding-left: 5px;
+}
+
+#body-transferencias #boleta-logo-texto {
+    text-align: start;
+    margin-right: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+#body-transferencias .accordion-body section p, #body-transferencias .accordion-body section label {
+    margin: 0;  
+}
+
+#body-transferencias .accordion-body figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+#body-transferencias #transferencias-nueva-info {
+    margin-top: 20px !important;
+}
+
+@media screen and (max-height: 650px) {
+    #body-transferencias {
+        height: 650px;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #body-transferencias table td, #body-transferencias table th {
+        font-size: 0.7em !important;
+    }
+}
+
+@media screen and (max-width: 476px) {
+    #body-transferencias #info {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        grid-gap: 10px;
+        grid-template-areas: "."
+                             "transferencias-menu";
+    }
+    #body-transferencias table td, #body-transferencias table th {
+        font-size: 0.6em !important;
+    }    
+}
+
+#popupTransferencia {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    width: 320px;
+    height: 200px;
+    z-index: 10;
+    background-color: white;
+    border: 2px solid #f23005;
+    border-radius: 5px;   
+    text-align: center;
+}
+
+#popupTransferencia h5 {
+    background-color: #d97c2b;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#popupTransferencia p {
+    text-align: left;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}    
+
+#popupTransferencia button {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    background-color: #d97c2b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 75px;
+    height: 25px;
+    font-size: 0.7em;
+}
+
+#popupTransferencia button:hover {
+    background-color: #f23005;
+}
+
+#popupTransferencia button:active {
+    background-color: #f23005;
+    scale: 1.2 !important;
+}    
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 30px;
+    color: white;
+    background-color:#0D0D0D;
+}
+
+#footer p{
+    font-size:.7rem;
+    padding-top:.5rem;
+}
+
+.naranja{
+    color: #d97c2b;
+}
+/*///////////*/
+
+/*////////////////////////////////////////////////////////////*

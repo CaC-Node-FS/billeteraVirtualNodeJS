@@ -41,6 +41,8 @@ app.use('/inversiones', inversionesRouter);
 app.use('/pagos', pagosRouter);
 app.use('/perfil', perfilRouter);
 app.use('/transferencias', transferenciasRouter);
+app.use('/transferencias/transferir', transferenciasRouter);
+app.use('/transferencias/eliminarAgendado', transferenciasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

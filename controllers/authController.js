@@ -155,13 +155,21 @@ exports.login = (req, res) => {
             if(!claveOk) {
               res.status(401).json({auth: false, token: null})
             } else {
-              let timeExpire = 10*60*1000
-              const token = jwt.sign({id: clave}, config.secretKey, {expiresIn: config.tokenExpiresIn})
-              res.cookie('jwt', token, {httpOnly: true, maxAge: timeExpire})
-              res.cookie('usuario', usuarioExiste.usuario, {httpOnly: true, maxAge: timeExpire})
-              res.cookie('usuario_id', usuarioExiste.id, {httpOnly: true, maxAge: timeExpire})
-              res.cookie('usuario_nombre', usuarioExiste.nombre, {httpOnly: true, maxAge: timeExpire})
-              res.status(200).json({usuario: usuarioExiste.nombre})
+              sql = "SELECT saldo,cuenta FROM cuentas WHERE cuenta_usuario=?"
+              connection.query(sql, [usuarioExiste.id], function (err, result) {
+                if (err) {
+                  throw err
+                } else {
+                  let timeExpire = 100*60*1000
+                  const token = jwt.sign({id: clave}, config.secretKey, {expiresIn: config.tokenExpiresIn})
+                  res.cookie('jwt', token, {httpOnly: true, maxAge: timeExpire})
+                  res.cookie('usuario', usuarioExiste.usuario, {httpOnly: true, maxAge: timeExpire})
+                  res.cookie('usuario_id', usuarioExiste.id, {httpOnly: true, maxAge: timeExpire})
+                  res.cookie('usuario_nombre', usuarioExiste.nombre, {httpOnly: true, maxAge: timeExpire})
+                  res.cookie('usuario_cuenta', result[0].cuenta, {httpOnly: true, maxAge: timeExpire})
+                  res.status(200).json({usuario: usuarioExiste.nombre})
+                }
+              })
             }
           }
         })

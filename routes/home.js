@@ -10,8 +10,8 @@ const connection = mysql.createConnection({
   database: "CAC_HOMEBANKING"
 })
 
-function formatDate(date) {
-  var d = new Date(date),
+function formatDate() {
+  var d = new Date(),
       month = '' + (d.getMonth() + 1),
       day = '' + d.getDate(),
       year = d.getFullYear()
@@ -33,7 +33,6 @@ router.get('/', function(req, res) {
   let datos
   let cuenta_datos = {}
   let tarjeta_datos = {}
-  console.log(usuario, usuario_id, usuario_nombre)
   if(jwt == undefined || usuario == undefined || usuario_id == undefined || usuario_nombre == undefined) {
     res.redirect('/')
   } else {
